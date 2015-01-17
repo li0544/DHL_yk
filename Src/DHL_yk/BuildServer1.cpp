@@ -10,16 +10,9 @@
 #include "UPDATEIP.h"
 
 #include "wininet.h"
-
-#if (WINVER >= 0x0600)
-	#import "msxml3.dll"
-#else
-	#if (WINVER >= 0x0500)
-		#import "msxml2.dll"
-	#else
-		#import "msxml.dll"
-	#endif
-#endif
+		
+//#import "msxml.dll"
+#import "msxml2.dll"
 
 
 
