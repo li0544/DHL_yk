@@ -84,8 +84,8 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 ../common/zlib/zlib.lib SHLWAPI.LIB nafxcw.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/大灰狼个人版远控 Beta V8.96.exe"
 # SUBTRACT BASE LINK32 /pdb:none /incremental:yes /map /debug
-# ADD LINK32 SHLWAPI.LIB nafxcw.lib ../common/zlib/zlib.lib ../common/G729a.lib ../common/UUID.LIB ../common/ToolkitPro1321vc60S.lib ../common/SkinH.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/大灰狼远程管理.exe"
-# SUBTRACT LINK32 /pdb:none /map
+# ADD LINK32 SHLWAPI.LIB nafxcw.lib ../common/G729a.lib ../common/UUID.LIB ../common/zlib/zlib.lib ../common/ToolkitPro1321vc60S.lib ../common/SkinH.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/大灰狼远程管理.exe"
+# SUBTRACT LINK32 /pdb:none
 
 !ENDIF 
 

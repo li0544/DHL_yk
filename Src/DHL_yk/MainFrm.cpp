@@ -316,18 +316,12 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 	}
 	*/
+	
 
-	if (!InitCommandBars())
-	{
-		return -1;
-	}
-
-	//此处代码在win7以上系统中出错,注释后程序运行正常
+	//此处代码在win7以上系统中出错,注释后程序运行正常  次问题以解决，上面有多次初始化代码，已删除
 	CXTPCommandBar* pMenuBar = pCommandBars->SetMenu(_T("Menu Bar"), IDR_MAINFRAME);	//_T()
 	pMenuBar->SetFlags(xtpFlagAddMDISysPopup);
-	
-	
-	//此处代码在win7以上系统中出错,注释后程序运行正常
+		
 	CXTPToolBar* pCommandBar = (CXTPToolBar*)(pCommandBars->Add(_T("工具栏(T)"), xtpBarTop));		//Standard
 	if (!pCommandBar || !pCommandBar->LoadToolBar(IDR_TOOLBAR3)) //
 	{
@@ -335,11 +329,9 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 	}
 	
+	//显示工具栏文字
 	pCommandBars->GetCommandBarsOptions()->bShowTextBelowIcons = TRUE;
 	pCommandBars->GetCommandBarsOptions()->ShowKeyboardCues(xtpKeyboardCuesShowWindowsDefault);
-	
-
-
 
 /*
 

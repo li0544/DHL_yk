@@ -11,7 +11,7 @@ import datetime
 import operator
 
 name = "´ó»ÒÀÇÔ¶³Ì¹ÜÀí"
-path = "D:\\Program\\Tem_C\\0001.Ô¶¿Ø\\0101.´ó»ÒÀÇÔ¶¿ØDDos°æ\\Bin"
+path = "D:\\Program\\Tem_C\\0001.Ô¶¿Ø\\0110.DHL_yk_DDos\\Src\\Bin"
      
 def rename_files():
     prefix = name + ".exe"
