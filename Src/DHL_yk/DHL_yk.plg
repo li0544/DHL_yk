@@ -1,0 +1,249 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DHL_yk - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Win32_Debug/DHL_yk.res" /d "NDEBUG" "E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\DHL_yk.rc"" 
+Creating temporary file "C:\DOCUME~1\wp\LOCALS~1\Temp\RSP7.tmp" with contents
+[
+/nologo /MT /GX /ZI /Od /I "CJ60lib/Include" /I "../common" /I "../common/ToolkitPro1321" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr"Win32_Debug/" /Fp"Win32_Debug/DHL_yk.pch" /YX"stdafx.h" /Fo"Win32_Debug/" /Fd"Win32_Debug/" /FD /c 
+"C:\Program Files\Microsoft Visual Studio\VC98\MFC\SRC\APPMODUL.CPP"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\common\AudioCode.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\AudioDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\BmpToAvi.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\include\Buffer.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\BuildServer1.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\ChangeGroup.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\include\CpuUsage.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\DDOSAttackDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\DHL_yk.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\Dib.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\errlog.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\FileManagerDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\FileTransferModeDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\Filter.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\FlowAttackDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\gh0stDoc.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\gh0stView.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\Icons.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\IniFile.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\InputDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\include\IOCPServer.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\KeyBoardDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\LogView.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\MainFrm.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\MD5.CPP"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\MsgBox.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\MyToolsKit.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\PcView.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\proxy.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\RegDataDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\RegDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\SafeDynMem.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\ScreenSpyDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\SerAttribDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\SerManager.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\SettingDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\SEU_QQwry.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\ShellDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\ShowNum.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\SystemDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\TrueColorToolBar.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\UPDATEIP.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\User.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\WaveIn.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\WaveOut.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\WebAttackDlg.cpp"
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\WebCamDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\wp\LOCALS~1\Temp\RSP7.tmp" 
+Creating temporary file "C:\DOCUME~1\wp\LOCALS~1\Temp\RSP8.tmp" with contents
+[
+/nologo /MT /GX /ZI /Od /I "CJ60lib/Include" /I "../common" /I "../common/ToolkitPro1321" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr"Win32_Debug/" /Fp"Win32_Debug/DHL_yk.pch" /Yc"stdafx.h" /Fo"Win32_Debug/" /Fd"Win32_Debug/" /FD /c 
+"E:\PROGRAM\TEM_C\0001.Ô¶¿Ø\0101.´ó»ÒÀÇÔ¶¿ØDDOS°æ\DHL_YK\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\wp\LOCALS~1\Temp\RSP8.tmp" 
+Creating temporary file "C:\DOCUME~1\wp\LOCALS~1\Temp\RSP9.tmp" with contents
+[
+SHLWAPI.LIB nafxcw.lib ../common/zlib/zlib.lib ../common/G729a.lib ../common/UUID.LIB ../common/ToolkitPro1321vc60S.lib ../common/SkinH.lib /nologo /subsystem:windows /incremental:yes /pdb:"Win32_Debug/´ó»ÒÀÇÔ¶³Ì¹ÜÀí.pdb" /debug /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/´ó»ÒÀÇÔ¶³Ì¹ÜÀí.exe" 
+".\Win32_Debug\APPMODUL.OBJ"
+".\Win32_Debug\AudioCode.obj"
+".\Win32_Debug\AudioDlg.obj"
+".\Win32_Debug\BmpToAvi.obj"
+".\Win32_Debug\Buffer.obj"
+".\Win32_Debug\BuildServer1.obj"
+".\Win32_Debug\ChangeGroup.obj"
+".\Win32_Debug\CpuUsage.obj"
+".\Win32_Debug\DDOSAttackDlg.obj"
+".\Win32_Debug\DHL_yk.obj"
+".\Win32_Debug\Dib.obj"
+".\Win32_Debug\errlog.obj"
+".\Win32_Debug\FileManagerDlg.obj"
+".\Win32_Debug\FileTransferModeDlg.obj"
+".\Win32_Debug\Filter.obj"
+".\Win32_Debug\FlowAttackDlg.obj"
+".\Win32_Debug\gh0stDoc.obj"
+".\Win32_Debug\gh0stView.obj"
+".\Win32_Debug\Icons.obj"
+".\Win32_Debug\IniFile.obj"
+".\Win32_Debug\InputDlg.obj"
+".\Win32_Debug\IOCPServer.obj"
+".\Win32_Debug\KeyBoardDlg.obj"
+".\Win32_Debug\LogView.obj"
+".\Win32_Debug\MainFrm.obj"
+".\Win32_Debug\MD5.OBJ"
+".\Win32_Debug\MsgBox.obj"
+".\Win32_Debug\MyToolsKit.obj"
+".\Win32_Debug\PcView.obj"
+".\Win32_Debug\proxy.obj"
+".\Win32_Debug\RegDataDlg.obj"
+".\Win32_Debug\RegDlg.obj"
+".\Win32_Debug\SafeDynMem.obj"
+".\Win32_Debug\ScreenSpyDlg.obj"
+".\Win32_Debug\SerAttribDlg.obj"
+".\Win32_Debug\SerManager.obj"
+".\Win32_Debug\SettingDlg.obj"
+".\Win32_Debug\SEU_QQwry.obj"
+".\Win32_Debug\ShellDlg.obj"
+".\Win32_Debug\ShowNum.obj"
+".\Win32_Debug\StdAfx.obj"
+".\Win32_Debug\SystemDlg.obj"
+".\Win32_Debug\TrueColorToolBar.obj"
+".\Win32_Debug\UPDATEIP.obj"
+".\Win32_Debug\User.obj"
+".\Win32_Debug\WaveIn.obj"
+".\Win32_Debug\WaveOut.obj"
+".\Win32_Debug\WebAttackDlg.obj"
+".\Win32_Debug\WebCamDlg.obj"
+".\Win32_Debug\DHL_yk.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\wp\LOCALS~1\Temp\RSP9.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+Compiling...
+APPMODUL.CPP
+AudioCode.cpp
+AudioDlg.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+BmpToAvi.cpp
+Buffer.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+BuildServer1.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+ChangeGroup.cpp
+CpuUsage.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+DDOSAttackDlg.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+DHL_yk.cpp
+Dib.cpp
+errlog.cpp
+FileManagerDlg.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+FileTransferModeDlg.cpp
+Filter.cpp
+FlowAttackDlg.cpp
+gh0stDoc.cpp
+gh0stView.cpp
+Icons.cpp
+IniFile.cpp
+InputDlg.cpp
+IOCPServer.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+KeyBoardDlg.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+LogView.cpp
+MainFrm.cpp
+MD5.CPP
+MsgBox.cpp
+MyToolsKit.cpp
+PcView.cpp
+proxy.cpp
+RegDataDlg.cpp
+RegDlg.cpp
+SafeDynMem.cpp
+ScreenSpyDlg.cpp
+SerAttribDlg.cpp
+SerManager.cpp
+SettingDlg.cpp
+SEU_QQwry.cpp
+ShellDlg.cpp
+ShowNum.cpp
+SystemDlg.cpp
+TrueColorToolBar.cpp
+UPDATEIP.cpp
+User.cpp
+WaveIn.cpp
+WaveOut.cpp
+WebAttackDlg.cpp
+WebCamDlg.cpp
+Linking...
+Creating temporary file "C:\DOCUME~1\wp\LOCALS~1\Temp\RSPB.tmp" with contents
+[
+/nologo /o"Win32_Debug/DHL_yk.bsc" 
+".\Win32_Debug\StdAfx.sbr"
+".\Win32_Debug\APPMODUL.SBR"
+".\Win32_Debug\AudioCode.sbr"
+".\Win32_Debug\AudioDlg.sbr"
+".\Win32_Debug\BmpToAvi.sbr"
+".\Win32_Debug\Buffer.sbr"
+".\Win32_Debug\BuildServer1.sbr"
+".\Win32_Debug\ChangeGroup.sbr"
+".\Win32_Debug\CpuUsage.sbr"
+".\Win32_Debug\DDOSAttackDlg.sbr"
+".\Win32_Debug\DHL_yk.sbr"
+".\Win32_Debug\Dib.sbr"
+".\Win32_Debug\errlog.sbr"
+".\Win32_Debug\FileManagerDlg.sbr"
+".\Win32_Debug\FileTransferModeDlg.sbr"
+".\Win32_Debug\Filter.sbr"
+".\Win32_Debug\FlowAttackDlg.sbr"
+".\Win32_Debug\gh0stDoc.sbr"
+".\Win32_Debug\gh0stView.sbr"
+".\Win32_Debug\Icons.sbr"
+".\Win32_Debug\IniFile.sbr"
+".\Win32_Debug\InputDlg.sbr"
+".\Win32_Debug\IOCPServer.sbr"
+".\Win32_Debug\KeyBoardDlg.sbr"
+".\Win32_Debug\LogView.sbr"
+".\Win32_Debug\MainFrm.sbr"
+".\Win32_Debug\MD5.SBR"
+".\Win32_Debug\MsgBox.sbr"
+".\Win32_Debug\MyToolsKit.sbr"
+".\Win32_Debug\PcView.sbr"
+".\Win32_Debug\proxy.sbr"
+".\Win32_Debug\RegDataDlg.sbr"
+".\Win32_Debug\RegDlg.sbr"
+".\Win32_Debug\SafeDynMem.sbr"
+".\Win32_Debug\ScreenSpyDlg.sbr"
+".\Win32_Debug\SerAttribDlg.sbr"
+".\Win32_Debug\SerManager.sbr"
+".\Win32_Debug\SettingDlg.sbr"
+".\Win32_Debug\SEU_QQwry.sbr"
+".\Win32_Debug\ShellDlg.sbr"
+".\Win32_Debug\ShowNum.sbr"
+".\Win32_Debug\SystemDlg.sbr"
+".\Win32_Debug\TrueColorToolBar.sbr"
+".\Win32_Debug\UPDATEIP.sbr"
+".\Win32_Debug\User.sbr"
+".\Win32_Debug\WaveIn.sbr"
+".\Win32_Debug\WaveOut.sbr"
+".\Win32_Debug\WebAttackDlg.sbr"
+".\Win32_Debug\WebCamDlg.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\wp\LOCALS~1\Temp\RSPB.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+´ó»ÒÀÇÔ¶³Ì¹ÜÀí.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
