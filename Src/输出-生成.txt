@@ -1,0 +1,3 @@
+﻿SHLWAPI.LIB nafxcw.lib ../common/zlib/zlib.lib ../common/G729a.lib ../common/UUID.LIB ../common/ToolkitPro1321vc60S.lib ../common/UUID.LIB
+
+CJ60lib/Include,../common,../common/ToolkitPro1321

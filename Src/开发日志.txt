@@ -1,0 +1,20 @@
+错误	3	error LNK2005: "public: __thiscall CSize::CSize(void)" (??0CSize@@QAE@XZ) 已经在 nafxcw.lib(afxbasepane.obj) 中定义	D:\Program\Tem_C\0001.远控\0101.大灰狼远控DOOS版V5.52\DHL_yk\atlsd.lib(atltypes.obj)	DHL_yk
+
+nafxcw.lib
+
+错误	3	error LNK2005: _sprintf 已经在 msvcrtd.lib(MSVCR100D.dll) 中定义	D:\Program\Tem_C\0001.远控\0101.大灰狼远控DOOS版V5.52\DHL_yk\LIBCMT.lib(sprintf.obj)	DHL_yk
+
+错误	73	error LNK2001: 无法解析的外部符号 __imp__strftime	D:\Program\Tem_C\0001.远控\0101.大灰狼远控DOOS版V5.52\DHL_yk\MainFrm.obj	DHL_yk
+
+错误	65	error LNK2001: 无法解析的外部符号 __imp__inet_ntoa@4	D:\Program\Tem_C\0001.远控\0100.大灰狼远控V5.52（2013稳定版）完整源码\DHL_yk\KeyBoardDlg.obj	DHL_yk
+
+错误	67	error LNK2001: 无法解析的外部符号 __imp__rand	D:\Program\Tem_C\0001.远控\0100.大灰狼远控V5.52（2013稳定版）完整源码\DHL_yk\DHL_yk.obj	DHL_yk
+
+错误	59	error LNK2001: 无法解析的外部符号 __imp__strftime	D:\Program\Tem_C\0001.远控\0100.大灰狼远控V5.52（2013稳定版）完整源码\DHL_yk\MainFrm.obj	DHL_yk
+
+错误	79	error LNK2001: 无法解析的外部符号 __imp__strncpy	D:\Program\Tem_C\0001.远控\0100.大灰狼远控V5.52（2013稳定版）完整源码\DHL_yk\proxy.obj	DHL_yk
+
+错误	70	error LNK2005: __initterm_e 已经在 msvcrtd.lib(MSVCR100D.dll) 中定义	D:\Program\Tem_C\0001.远控\大灰狼远控V5.52（2013稳定版）完整源码\DHL_yk\LIBCMT.lib(crt0dat.obj)	DHL_yk
+
+
+8.18   添加  doss功能。。。
