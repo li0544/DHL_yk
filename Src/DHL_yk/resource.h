@@ -592,6 +592,9 @@
 #define IDM_NEWSTIPS                    32955
 #define IDM_VOICEPROMPT                 32956
 #define IDM_DDOS                        32957
+#define ID_m_skin_Luna                  32958
+#define ID_m_skin_Royale                32959
+#define ID_m_skin_Office2007            32960
 #define ID_STAUTSTIP                    59394
 #define ID_STAUTSSPEED                  59395
 #define ID_STAUTSPORT                   59396
@@ -604,7 +607,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        269
-#define _APS_NEXT_COMMAND_VALUE         32958
+#define _APS_NEXT_COMMAND_VALUE         32966
 #define _APS_NEXT_CONTROL_VALUE         1131
 #define _APS_NEXT_SYMED_VALUE           101
 #endif

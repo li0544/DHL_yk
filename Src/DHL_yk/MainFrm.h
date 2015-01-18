@@ -50,9 +50,13 @@ public:
 	BOOL m_bShowWorkspace;
 	BOOL  IOCTrat;
 
-	CString m_csStylesPath;
+	//CString m_csStylesPath;
 
+	
+	//int    m_nVisualTheme;
+	//CString m_strStylesPath;
 
+	CString ToolTipsTextsp;
 // Operations
 public:
 	CMap<UINT,UINT, CWnd* , CWnd*> m_mapPanes;

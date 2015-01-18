@@ -1422,6 +1422,8 @@ END
 STRINGTABLE DISCARDABLE 
 BEGIN
     IDM_ADD_SERVER          "·þ_Îñ_Æ÷"
+    ID_m_skin_Luna          "11111111111111"
+    ID_m_skin_Royale        "111111111111"
 END
 
 STRINGTABLE DISCARDABLE 

@@ -77,7 +77,6 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_UPDATE_COMMAND_UI(ID_STAUTSCOUNT, OnUpdateStatusBar)
 	ON_COMMAND(ID_OPTIONS_FRAMETHEME, OnFrameTheme)
 	ON_UPDATE_COMMAND_UI(ID_OPTIONS_FRAMETHEME, OnUpdateFrameTheme)
-	ON_COMMAND(IDM_VOICEPROMPT, OnVoiceprompt)
 	//}}AFX_MSG_MAP
 	ON_XTP_CREATECONTROL()
 	ON_MESSAGE(XTPWM_DOCKINGPANE_NOTIFY, OnDockingPaneNotify)
@@ -368,17 +367,17 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 
 	m_paneManager.InstallDockingPanes(this);
-	m_paneManager.SetTheme(xtpPaneThemeVisualStudio2010); // 设置主题
+	m_paneManager.SetTheme(xtpPaneThemeVisualStudio2010); // 设置主题 xtpPaneThemeVisualStudio2010
 
 	CXTPDockingPane* pwndPaneLog = CreatePane(235, 150, RUNTIME_CLASS(CLogView), _T("日志信息"), xtpPaneDockBottom);
 	CXTPDockingPane* pwndPaneNum = CreatePane(58, 150, RUNTIME_CLASS(CShowNum), _T("主机统计"), xtpPaneDockRight, pwndPaneLog);
-//	CXTPDockingPane* pwndPaneChoose = CreatePane(235, 150, RUNTIME_CLASS(CMoreChoose), _T("筛选主机"), xtpPaneDockBottom);
+	//CXTPDockingPane* pwndPaneChoose = CreatePane(235, 150, RUNTIME_CLASS(CMoreChoose), _T("筛选主机"), xtpPaneDockBottom);
 	CXTPDockingPane* pwndPaneUPDATEIP = CreatePane(235, 150, RUNTIME_CLASS(CUPDATEIP), _T("域名更新"), xtpPaneDockBottom);
 //    CXTPDockingPane* pwndPaneBatch = CreatePane(235, 150, RUNTIME_CLASS(CBatch), _T("批量命令"), xtpPaneDockBottom);
 //	CXTPDockingPane* pwndPaneplay = CreatePane(260, 145, RUNTIME_CLASS(CBuildServer), _T("整蛊娱乐"), xtpPaneDockBottom);
 	CXTPDockingPane* pwndPaneproxy = CreatePane(235, 150, RUNTIME_CLASS(CProxy), _T("远程连接"), xtpPaneDockBottom);
 
-//	m_paneManager.AttachPane( pwndPaneChoose, pwndPaneLog );
+	//m_paneManager.AttachPane( pwndPaneChoose, pwndPaneLog );
 	m_paneManager.AttachPane( pwndPaneUPDATEIP, pwndPaneLog);
 //	m_paneManager.AttachPane( pwndPaneBatch, pwndPaneChoose);
 	m_paneManager.AttachPane( pwndPaneproxy, pwndPaneUPDATEIP );
@@ -934,6 +933,7 @@ void CMainFrame::OnShow()
 	IOCTrat=NULL;  //关闭定时器 
 	m_TrayIcon.RemoveIcon();
 	m_TrayIcon.MaximizeFromTray(this);
+
 }
 
 void CMainFrame::OnExit() 
@@ -1137,7 +1137,8 @@ void CMainFrame::OnAddSkin()// 加载资源皮肤
 
 }
 */
-CString ToolTipsTextsp;
+
+
 void CMainFrame::OnTimerspop(BOOL Tstx,CString ToolTipsText)
 {
 	ToolTipsTextsp=ToolTipsText;
@@ -1226,3 +1227,4 @@ void CMainFrame::OnVoiceprompt()
 	g_pFrame->OnTimerschushi(); //刷新托盘数值显示
 	
 }
+

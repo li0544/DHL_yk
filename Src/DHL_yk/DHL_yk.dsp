@@ -73,7 +73,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /GX /O2 /I "CJ60lib/Include" /I "../common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /YX"stdafx.h" /FD /c
 # SUBTRACT BASE CPP /Fr
-# ADD CPP /nologo /MT /GX /ZI /Od /I "CJ60lib/Include" /I "../common" /I "../common/ToolkitPro1321" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /YX"stdafx.h" /FD /c
+# ADD CPP /nologo /MT /GX /ZI /Od /I "CJ60lib/Include" /I "../common" /I "../common/ToolkitPro1501" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /YX"stdafx.h" /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "NDEBUG"
@@ -84,7 +84,7 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 ../common/zlib/zlib.lib SHLWAPI.LIB nafxcw.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/大灰狼个人版远控 Beta V8.96.exe"
 # SUBTRACT BASE LINK32 /pdb:none /incremental:yes /map /debug
-# ADD LINK32 SHLWAPI.LIB nafxcw.lib ../common/G729a.lib ../common/UUID.LIB ../common/zlib/zlib.lib ../common/ToolkitPro1321vc60S.lib ../common/SkinH.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/大灰狼远程管理.exe"
+# ADD LINK32 SHLWAPI.LIB nafxcw.lib ../common/G729a.lib ../common/UUID.LIB ../common/ToolkitPro1501vc60S.lib ../common/zlib/zlib.lib ../common/SkinH.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/大灰狼远程管理.exe"
 # SUBTRACT LINK32 /pdb:none
 
 !ENDIF 

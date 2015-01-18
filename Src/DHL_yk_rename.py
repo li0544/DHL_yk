@@ -53,6 +53,7 @@ def rename_files():
                 os.remove(bakfilename)  #delete bak file
                 if not os.path.isfile(bakfilename):
                     print('delete bak file success !')
+
 #if __name_ == '__main__':
 rename_files()
 

