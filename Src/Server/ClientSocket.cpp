@@ -432,7 +432,7 @@ int CClientSocket::Send( LPBYTE lpData, UINT nSize )
 		if (pDest == NULL)
 			return 0;
 
-		int	nRet = compress(pDest, &destLen, lpData, nSize);
+		int	nRet = compress(pDest, &destLen, lpData, nSize);	//Ñ¹ËõÊý¾Ý
 		
 		if (nRet != Z_OK)
 		{

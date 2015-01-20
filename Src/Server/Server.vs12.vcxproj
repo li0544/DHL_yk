@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>Server.vs10</ProjectName>
+    <ProjectGuid>{749CCDF8-E3C3-429B-BF68-05E3B4C6B8EB}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\vs12_Debug\</OutDir>
+    <IntDir>.\vs12_Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>U0_Server</TargetName>
+    <TargetExt>.dat</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\vs12_Release\</OutDir>
+    <IntDir>.\vs12_Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>U0_Server</TargetName>
+    <TargetExt>.dat</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\vs12_Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\vs12_Debug\Server.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>.\vs12_Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\vs12_Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\Server.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\vs12_Debug\Server.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>../bin/Update/U0_Server.dat</OutputFile>
+      <AdditionalDependencies>../../lib/zlib.lib;../../lib/G729a.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>../common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\vs12_Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\vs12_Release\Server.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ObjectFileName>.\vs12_Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\vs12_Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\Server.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\vs12_Release\Server.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>../bin/Update/U0_Server.dat</OutputFile>
+      <AdditionalDependencies>../common/zlib/zlib.lib;../common/G729a.lib;Shlwapi.lib;MSVCRT.LIB;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\AudioCode.cpp" />
+    <ClCompile Include="common\AudioManager.cpp" />
+    <ClCompile Include="common\Buffer.cpp" />
+    <ClCompile Include="ClientSocket.cpp" />
+    <ClCompile Include="common\DDOSManager.cpp" />
+    <ClCompile Include="common\Dialupass.cpp" />
+    <ClCompile Include="common\FileManager.cpp" />
+    <ClCompile Include="common\install.cpp" />
+    <ClCompile Include="common\KernelManager.cpp" />
+    <ClCompile Include="common\KeyboardManager.cpp" />
+    <ClCompile Include="common\Manager.cpp" />
+    <ClCompile Include="Myfunction.cpp" />
+    <ClCompile Include="common\RegEditEx.cpp" />
+    <ClCompile Include="common\RegeditOpt.cpp" />
+    <ClCompile Include="common\Registry.cpp" />
+    <ClCompile Include="common\RegManager.cpp" />
+    <ClCompile Include="common\ScreenManager.cpp" />
+    <ClCompile Include="common\ScreenSpy.cpp" />
+    <ClCompile Include="common\SerManager.cpp" />
+    <ClCompile Include="Server.cpp" />
+    <ClCompile Include="common\ServerStart.cpp" />
+    <ClCompile Include="common\ShellManager.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="common\SystemManager.cpp" />
+    <ClCompile Include="common\until.cpp" />
+    <ClCompile Include="common\VideoCap.cpp" />
+    <ClCompile Include="common\VideoManager.cpp" />
+    <ClCompile Include="common\WaveIn.cpp" />
+    <ClCompile Include="common\WaveOut.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Server.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\AudioCode.h" />
+    <ClInclude Include="common\AudioManager.h" />
+    <ClInclude Include="common\Buffer.h" />
+    <ClInclude Include="ClientSocket.h" />
+    <ClInclude Include="..\common\CursorInfo.h" />
+    <ClInclude Include="common\DDOSManager.h" />
+    <ClInclude Include="Declare.h" />
+    <ClInclude Include="common\Dialupass.h" />
+    <ClInclude Include="common\FileManager.h" />
+    <ClInclude Include="common\install.h" />
+    <ClInclude Include="common\KernelManager.h" />
+    <ClInclude Include="common\KeyboardManager.h" />
+    <ClInclude Include="common\keylog.h" />
+    <ClInclude Include="common\login.h" />
+    <ClInclude Include="common\loop.h" />
+    <ClInclude Include="..\common\macros.h" />
+    <ClInclude Include="common\Manager.h" />
+    <ClInclude Include="Myfunction.h" />
+    <ClInclude Include="common\RegEditEx.h" />
+    <ClInclude Include="common\RegeditOpt.h" />
+    <ClInclude Include="common\Registry.h" />
+    <ClInclude Include="common\RegManager.h" />
+    <ClInclude Include="common\ScreenManager.h" />
+    <ClInclude Include="common\ScreenSpy.h" />
+    <ClInclude Include="common\SerManager.h" />
+    <ClInclude Include="common\ServerStart.h" />
+    <ClInclude Include="common\ShellManager.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="common\SystemManager.h" />
+    <ClInclude Include="common\tou.h" />
+    <ClInclude Include="common\until.h" />
+    <ClInclude Include="common\VideoCap.h" />
+    <ClInclude Include="..\common\VideoCodec.h" />
+    <ClInclude Include="common\VideoManager.h" />
+    <ClInclude Include="common\WaveIn.h" />
+    <ClInclude Include="common\WaveOut.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\Server.ico" />
+    <CustomBuild Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

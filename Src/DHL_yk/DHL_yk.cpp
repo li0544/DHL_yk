@@ -98,7 +98,7 @@ CGh0stApp::CGh0stApp()
 //	m_Hmodule = LoadLibrary(szDllPath);
 
 	GetCurrentDirectory(MAX_PATH,szCurPath);
-	strcat(szCurPath,"\\Update\\DHL2012.dat");
+	strcat(szCurPath,"\\Update\\U0_Server.dat");
 	if( INVALID_FILE_ATTRIBUTES==GetFileAttributes(szCurPath))
 	//if( INVALID_HANDLE_VALUE==GetFileAttributes(szCurPath))
 	{

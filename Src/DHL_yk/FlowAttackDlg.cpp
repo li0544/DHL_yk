@@ -439,9 +439,9 @@ void CFlowAttackDlg::OnChangeEditHex()
 	CHAR CheckStr[5000]={NULL};
 	strcpy(CheckStr,TempBuffer);
 
-
+	WORD i;
 	//检测是否有不合法的字符
-	for (WORD i=0;i<len;i++) 
+	for (i=0;i<len;i++) 
 	{
 		//转换为小写 手工.
 		if(CheckStr[i]>=65 && CheckStr[i]<=90)
@@ -456,7 +456,7 @@ void CFlowAttackDlg::OnChangeEditHex()
 	}
 	SetDlgItemText(IDC_EDIT_DECIMAL,HexToDecimal(TempBuffer,TRUE));
 
-	 i = ((CEdit *)GetDlgItem(IDC_EDIT_DECIMAL))->GetLineCount();
+	i = ((CEdit *)GetDlgItem(IDC_EDIT_DECIMAL))->GetLineCount();
 
 	((CEdit *)GetDlgItem(IDC_EDIT_DECIMAL))->LineScroll(i);
 }

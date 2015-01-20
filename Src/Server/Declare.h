@@ -1,4 +1,8 @@
 
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
 //#include "Declare.h"   //动态调用库函数
 
 #include <afxwin.h>
@@ -74,7 +78,7 @@ typedef HANDLE (WINAPI *CreateFileAT)
     __in     DWORD dwFlagsAndAttributes,
     __in_opt HANDLE hTemplateFile
     );
-typedef HANDLE (WINAPI *CreateThreadT)
+typedef HANDLE (WINAPI *CreateThreadT_II)
 (
  LPSECURITY_ATTRIBUTES lpThreadAttributes,
  DWORD dwStackSize,
@@ -137,7 +141,7 @@ typedef BOOL
 
 typedef HANDLE
 (WINAPI
-*CreateThreadT)(
+*CreateThreadT_II)(
     __in_opt  LPSECURITY_ATTRIBUTES lpThreadAttributes,
     __in      SIZE_T dwStackSize,
     __in      LPTHREAD_START_ROUTINE lpStartAddress,

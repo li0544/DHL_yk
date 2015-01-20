@@ -1,5 +1,8 @@
-#include "tou.h"
+
+#include "stdio.h"
 #include "DDOSManager.h"
+#include "tou.h"
+
 
 typedef LPVOID (WINAPI *HeapAllocT)
 (

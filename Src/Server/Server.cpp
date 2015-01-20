@@ -9,7 +9,8 @@
 #include <shellapi.h>
 #include <string.h> 
 #include "wininet.h"
-#import "msxml2.dll"
+//#import "msxml2.dll"
+#import "msxml3.dll"
 
 
 #include "common/KernelManager.h"
@@ -38,7 +39,7 @@ struct ONLINEINFO
 	2085,
 	2085,
 	2085,
-	"V_120305"
+	"V_150120"
 };
 
 //============================================================

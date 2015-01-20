@@ -168,7 +168,17 @@ void CDDOSAttackDlg::OnShowWindow(BOOL bShow, UINT nStatus)
 	
 	// TODO: Add your message handler code here
 	if(!((CGh0stApp *)AfxGetApp())->m_IniFile.GetInt("Settings", "Animate",FALSE))
-			AnimateWindow(m_hWnd,400,AW_CENTER);
+			//AnimateWindow(m_hWnd,400,AW_CENTER);
+#if _MSC_VER == 1200
+			AnimateWindow(m_hWnd, 400, AW_CENTER);
+#endif
+#if _MSC_VER == 1600
+			AnimateWindow(400, AW_CENTER);
+#endif
+#if _MSC_VER == 1800
+			AnimateWindow(400, AW_CENTER);
+#endif
+
 
 	//更新下在线主机
 	DWORD AllHost=0;

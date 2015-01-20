@@ -12,8 +12,8 @@
 #include "wininet.h"
 		
 //#import "msxml.dll"
-#import "msxml2.dll"
-
+//#import "msxml2.dll"
+#import "msxml3.dll"
 
 
 #pragma comment(lib, "Wininet.lib")
@@ -849,7 +849,7 @@ void BuildServer::OnBuild()   //void CBuildServer::OnBuild()   CBuildDialog::OnB
 
 	//检测dat文件是否存在
 	char path[MAX_PATH];
-	sprintf(path,"%s\\Update\\DHL2012.dat",patht);
+	sprintf(path,"%s\\Update\\U0_Server.dat",patht);
 	if (IsFileExist(path)==FALSE)
 	{
 		strcat(path,"文件不存在,请检查文件后在进行配置");

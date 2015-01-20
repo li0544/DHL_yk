@@ -31,6 +31,25 @@
                 <Item>\RECYCLED\</Item>
                 <Item>*\desktop.ini</Item>
                 <Item>*\thumbs.db</Item>
+                <Item>\DHL_yk\vs12_Release\</Item>
+                <Item>\DHL_yk\vs12_Debug\</Item>
+                <Item>\DHL_yk\vs10_Debug\</Item>
+                <Item>\DHL_yk\vs10_Release\</Item>
+                <Item>\DHL_yk\vs6_Debug\</Item>
+                <Item>\DHL_yk\vs6_Release\</Item>
+                <Item>\DHL_yk\Release\</Item>
+                <Item>\DHL_yk\Win32_Debug\</Item>
+                <Item>\Server\vs12_Debug\</Item>
+                <Item>\Server\vs10_Debug\</Item>
+                <Item>\Server\vs10_Release\</Item>
+                <Item>\Server\vs12_Release\</Item>
+                <Item>\Server\vs6_Debug\</Item>
+                <Item>\Server\vs6_Release\</Item>
+                <Item>\Server\Debug\</Item>
+                <Item>\Server\Release\</Item>
+                <Item>\Proj\ipch\</Item>
+                <Item>\Server\ipch\</Item>
+                <Item>*.pdb;</Item>
             </Exclude>
             <TimeSpan Type="None">0</TimeSpan>
             <SizeMin Unit="None">0</SizeMin>
@@ -38,8 +57,8 @@
         </GlobalFilter>
         <FolderPairs>
             <Pair>
-                <Left>D:\Program\Tem_C\0001.远控\0101.大灰狼远控DDos版</Left>
-                <Right>G:\Program\Tem_C\0001.远控\0101.大灰狼远控DDos版</Right>
+                <Left>D:\Program\Tem_C\0001.远控\0110.DHL_yk_DDos\Src</Left>
+                <Right>g:\Program\Tem_C\0001.远控\0110.DHL_yk_DDos\Src</Right>
             </Pair>
         </FolderPairs>
         <OnCompletion/>
