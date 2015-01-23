@@ -28,10 +28,11 @@ public:
 	void	UpdateDocTitle();
 	BOOL	AddGroup( LPCTSTR lpszTitle );
 
-	HWND	TCItem_GetHandle(int index);
-	HWND    TCSelItem_GetHandle();
-	void    TCItem_SetText(int index, LPSTR tit);
-	LPSTR	TCItem_GetText(int index);
+	HWND	TCItem_GetHandle(int index);			//返回指定页的句柄
+	HWND    TCItemSel_GetHandle();					//返回选中页的句柄
+	void    TCItem_SetText(int index, LPSTR tit);	//设置指定页标题
+	LPSTR	TCItem_GetText(int index);				//返回指定页标题
+	LPSTR	TCItemSel_GetText();					//返回选中页标题
 	
 	//listCWnd list_wnd;
 	LONG l_Botton;

@@ -43,6 +43,7 @@
     <OutDir>..\bin\</OutDir>
     <IntDir>.\vs10_Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>U0_2015_vs10</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\bin\</OutDir>
@@ -50,6 +51,7 @@
     <LinkIncremental>false</LinkIncremental>
     <ExcludePath>$(ExcludePath)</ExcludePath>
     <EmbedManifest>false</EmbedManifest>
+    <TargetName>U0_2015_vs10d</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -87,7 +89,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <OutputFile>../Bin/大灰狼远程管理.exe</OutputFile>
+      <OutputFile>../Bin/U0_2015_vs10.exe</OutputFile>
       <AdditionalDependencies>../../lib/ToolkitPro1501vc100.lib;../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -127,7 +129,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <OutputFile>../Bin/大灰狼远程管理.exe</OutputFile>
+      <OutputFile>../Bin/U0_2015_vs10d.exe</OutputFile>
       <AdditionalDependencies>../../lib/ToolkitPro1501vc100.lib;../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>

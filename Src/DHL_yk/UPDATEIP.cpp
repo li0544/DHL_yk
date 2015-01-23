@@ -22,6 +22,8 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
+CUPDATEIP* g_pUpdateIP;
+
 extern BOOL IsFileExist(LPCTSTR strFileName);
 /////////////////////////////////////////////////////////////////////////////
 // CUPDATEIP

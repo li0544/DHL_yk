@@ -13,12 +13,12 @@
 class CLogView : public CListView
 {
 protected:
-	CLogView();           // protected constructor used by dynamic creation
+	
 	DECLARE_DYNCREATE(CLogView)
 
 // Attributes
 public:
-
+	CLogView();           // protected constructor used by dynamic creation
 // Operations
 public:
 	void InsertLogItem(LPCTSTR Text,int Mode, int Flag);
@@ -34,7 +34,7 @@ public:
 
 // Implementation
 protected:
-	CXTHeaderCtrl   m_heades;
+	//CXTHeaderCtrl   m_heades;
 	virtual ~CLogView();
 #ifdef _DEBUG
 	virtual void AssertValid() const;

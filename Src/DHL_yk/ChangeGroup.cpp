@@ -51,7 +51,7 @@ BOOL CChangeGroup::OnInitDialog()
 	int nTabs = g_pTabView->m_wndTabControl.GetItemCount();
 	for ( int i = 0; i < nTabs; i++ )
 	{
-		strTemp = g_pTabView->m_wndTabControl.GetItem(i)->GetCaption();
+		strTemp = g_pTabView->TCItem_GetText(i);
 		int n = strTemp.ReverseFind('(');
 		if ( n > 0 )
 		{
@@ -78,7 +78,7 @@ void CChangeGroup::OnOK()
 		return;
 	}
 	CString strTemp, Temp;
-	strTemp = g_pTabView->m_wndTabControl.GetSelectedItem()->GetCaption();
+	strTemp = g_pTabView->TCItemSel_GetText();
 	
 	int n = strTemp.ReverseFind('(');
 	if ( n > 0 )

@@ -324,19 +324,10 @@
     <Image Include="res\ico2\11.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\196.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\202.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\ico2\22.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\9428.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\ico2\9683.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\SysInfo\AppWindows.ico">
@@ -346,9 +337,6 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\Becareful.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap3.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\Bitmap_4.bmp">
@@ -366,9 +354,6 @@
     <Image Include="res\CS icon.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\ddd.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\dword.ico">
       <Filter>Resource Files</Filter>
     </Image>
@@ -381,16 +366,10 @@
     <Image Include="res\gh0st.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\icon2.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\SysInfo\Informacion.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\keyboard.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\Logo.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\monitor.ico">
@@ -420,22 +399,13 @@
     <Image Include="res\SysInfo\Services.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\SHIPIN.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\syskm.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\system.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\systray.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\systray1.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\toolbar.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\toolbar1.bmp">
@@ -444,25 +414,13 @@
     <Image Include="res\toolbar2.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\toolbar3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\toolbar4.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\ToolbarLarge.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\USER.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\w_ip.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\webcam.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\启动.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\实用工具.ico">
@@ -474,16 +432,7 @@
     <Image Include="res\文件夹2.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\无视频.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\用户.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\ico2\用户0.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\有视频.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\ico3\SmallIcons.png" />

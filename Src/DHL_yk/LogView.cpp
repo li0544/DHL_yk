@@ -109,8 +109,8 @@ void CLogView::OnInitialUpdate()
 	}
 
 	HWND hWndHeader = m_pLogList->GetDlgItem(0)->GetSafeHwnd();
-	m_heades.SubclassWindow(hWndHeader);
-	m_heades.SetTheme(new CXTHeaderCtrlThemeOffice2003());
+	//m_heades.SubclassWindow(hWndHeader);
+	//m_heades.SetTheme(new CXTHeaderCtrlThemeOffice2003());
 //	((CGh0stApp *)AfxGetApp())->m_IniFile.SetString("Other", "Out","1");	
 }
 

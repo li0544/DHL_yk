@@ -13,7 +13,7 @@
 class CPcView : public CListView
 {
 protected:
-	CPcView();           // protected constructor used by dynamic creation
+	
 	DECLARE_DYNCREATE(CPcView)
 
 	//DOSS
@@ -25,6 +25,8 @@ protected:
 
 // Attributes
 public:
+	CPcView();           // protected constructor used by dynamic creation
+
 	void NewInitialUpdate();
 	void SendSelectCommand(PBYTE pData, UINT nSize);
 	void SendALLSelectCommand(PBYTE pData, UINT nSize);
@@ -49,7 +51,7 @@ public:
 protected:
 	int             m_nSortedCol;
 	bool            m_bAscending;
-	CXTHeaderCtrl   m_header;
+	//CXTHeaderCtrl   m_header;
 	void SortColumn(int iCol, bool bAsc);
 	virtual ~CPcView();
 #ifdef _DEBUG

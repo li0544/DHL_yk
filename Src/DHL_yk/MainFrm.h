@@ -10,7 +10,7 @@
 #endif // _MSC_VER > 1000
 
 
-class CMainFrame : public CXTPFrameWnd
+class CMainFrame : public CFrameWnd	//CXTPFrameWnd
 {
 protected: // create from serialization only
 	CMainFrame();
@@ -18,18 +18,7 @@ protected: // create from serialization only
 
 // Attributes
 public:
-	CXTPControlGalleryItems* m_pItemsShapes;
-	CXTPControlGalleryItems* m_pItemsStyles;
-	CXTPControlGalleryItems* m_pItemsStyleSet;
-	CXTPControlGalleryItems* m_pItemsThemeColors;
-	CXTPControlGalleryItems* m_pItemsThemeFonts;
-	
-	CXTPControlGalleryItems* m_pItemsFontTextColor;
-	CXTPControlGalleryItems* m_pItemsFontBackColor;
-	CXTPControlGalleryItems* m_pItemsFontFace;
-	CXTPControlGalleryItems* m_pItemsFontSize;
-	CXTPControlGalleryItems* m_pItemsUndo;
-	CXTPControlGalleryItems* m_pItemsColumns;
+
 
 	BOOL m_bChecked;
 	BOOL m_bOptions[6];
@@ -76,7 +65,7 @@ public:
 //	BOOL CreateRibbonBar();
 //	void LoadIcons();
 
-	int OnCreateControl(LPCREATECONTROLSTRUCT lpCreateControl);
+	//int OnCreateControl(LPCREATECONTROLSTRUCT lpCreateControl);
 	void ShowToolTips(LPCTSTR lpszText);
 	void ShowConnectionsNumber();
 	static void ProcessReceiveComplete(ClientContext *pContext);
@@ -92,12 +81,19 @@ public:
 protected:  // control bar embedded members
 	void SetTheme(int iTheme);
 	int            m_iTheme;
-	CXTPTabClientWnd m_wndClient;
+	/*CXTPTabClientWnd m_wndClient;
 	CXTTrayIcon m_TrayIcon;
 	CXTPStatusBar  m_wndStatusBar;
 	CXTPDockingPane*        m_pActivePane;
 	CXTPDockingPaneManager  m_paneManager;
 	CXTPDockingPane* CreatePane(int x, int y, CRuntimeClass* pNewViewClass, CString strFormat, XTPDockingPaneDirection direction, CXTPDockingPane* pNeighbour = NULL);
+*/
+	//CTabClientWnd m_wndClient;
+	//CTrayIcon m_TrayIcon;
+	CStatusBar  m_wndStatusBar;
+	//CDockingPane*        m_pActivePane;
+	//CDockingPaneManager  m_paneManager;
+	//CDockingPane* CreatePane(int x, int y, CRuntimeClass* pNewViewClass, CString strFormat, XTPDockingPaneDirection direction, CXTPDockingPane* pNeighbour = NULL);
 
 
 
@@ -123,14 +119,16 @@ protected:
 	afx_msg void OnSettings();
 	afx_msg void OnBuild();
 	afx_msg void OnAppExit();
-	afx_msg void OnViewStatusBar();
 	afx_msg void OnTools();
-	afx_msg void OnAddSkin();
-	afx_msg CString Onlinetips();
-	afx_msg CString OnVoicepromptsm();
 	afx_msg void OnTimer(UINT nIDEvent);
 	afx_msg LRESULT OnSystray(WPARAM wParam,LPARAM lParam);
 	afx_msg void OnNewstips();
+	afx_msg void OnSize(UINT nType, int cx, int cy);
+	afx_msg void OnShowWindow(BOOL bShow, UINT nStatus);
+	afx_msg void OnViewStatusBar();
+	afx_msg void OnAddSkin();
+	afx_msg CString Onlinetips();
+	afx_msg CString OnVoicepromptsm();
 	afx_msg void OnVoiceprompt();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()

@@ -38,13 +38,12 @@ RSC=rc.exe
 # PROP BASE Target_Dir ""
 # PROP Use_MFC 5
 # PROP Use_Debug_Libraries 0
-# PROP Output_Dir "Release"
-# PROP Intermediate_Dir "Release"
+# PROP Output_Dir "vs6_Release"
+# PROP Intermediate_Dir "vs6_Release"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /c
-# ADD CPP /nologo /MT /GX /O1 /I "CJ60lib/Include" /I "../common" /I "../common/ToolkitPro1321" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MT /GX /O1 /I "CJ60lib/Include" /I "../common" /I "../../include/ToolkitPro1321" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "NDEBUG" /d "_AFXDLL"
@@ -54,8 +53,8 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /machine:I386
-# ADD LINK32 ../common/zlib/zlib.lib ../common/G729a.lib SHLWAPI.LIB nafxcw.lib ../common/UUID.LIB ../common/ToolkitPro1321vc60S.lib ../common/SkinH.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/大灰狼远程管理.exe"
-# SUBTRACT LINK32 /pdb:none /incremental:yes /map /debug
+# ADD LINK32 ../../lib/zlib.lib ../../lib/G729a.lib SHLWAPI.LIB nafxcw.lib ../../lib/UUID.LIB ../../lib/ToolkitPro1321vc60S.lib ../../lib/SkinH.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/U0_2015_vs6.exe"
+# SUBTRACT LINK32 /pdb:none
 
 !ELSEIF  "$(CFG)" == "DHL_yk - Win32 Debug"
 
@@ -67,13 +66,13 @@ LINK32=link.exe
 # PROP BASE Target_Dir ""
 # PROP Use_MFC 5
 # PROP Use_Debug_Libraries 0
-# PROP Output_Dir "Win32_Debug"
-# PROP Intermediate_Dir "Win32_Debug"
+# PROP Output_Dir "vs6_Debug"
+# PROP Intermediate_Dir "vs6_Debug"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /GX /O2 /I "CJ60lib/Include" /I "../common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /YX"stdafx.h" /FD /c
 # SUBTRACT BASE CPP /Fr
-# ADD CPP /nologo /MT /GX /ZI /Od /I "CJ60lib/Include" /I "../common" /I "../common/ToolkitPro1501" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /YX"stdafx.h" /FD /c
+# ADD CPP /nologo /MT /GX /ZI /Od /I "CJ60lib/Include" /I "../common" /I "../../include/ToolkitPro1321_" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /YX"stdafx.h" /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "NDEBUG"
@@ -84,7 +83,7 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 ../common/zlib/zlib.lib SHLWAPI.LIB nafxcw.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/大灰狼个人版远控 Beta V8.96.exe"
 # SUBTRACT BASE LINK32 /pdb:none /incremental:yes /map /debug
-# ADD LINK32 SHLWAPI.LIB nafxcw.lib ../common/G729a.lib ../common/UUID.LIB ../common/ToolkitPro1501vc60S.lib ../common/zlib/zlib.lib ../common/SkinH.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/大灰狼远程管理.exe"
+# ADD LINK32 SHLWAPI.LIB nafxcw.lib ../../lib/G729a.lib ../../lib/UUID.LIB ../../lib/ToolkitPro1321vc60S.lib ../../lib/zlib.lib ../../lib/SkinH.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /nodefaultlib:"MSVCRT.lib libcmt.lib" /nodefaultlib:"LIBC.lib" /out:"../Bin/U0_2015_vs6d.exe"
 # SUBTRACT LINK32 /pdb:none
 
 !ENDIF 
@@ -96,10 +95,6 @@ LINK32=link.exe
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
-# Begin Source File
-
-SOURCE="C:\Program Files\Microsoft Visual Studio\VC98\MFC\SRC\APPMODUL.CPP"
-# End Source File
 # Begin Source File
 
 SOURCE=..\common\AudioCode.cpp
@@ -324,6 +319,10 @@ SOURCE=.\BuildServer1.h
 # Begin Source File
 
 SOURCE=.\ChangeGroup.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\common\CPub.h
 # End Source File
 # Begin Source File
 
@@ -764,39 +763,11 @@ SOURCE=.\res\aero.she
 # End Source File
 # Begin Source File
 
-SOURCE=.\res\Styles\Codejock.cjstyles
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\Styles\dialog.cjstyles
-# End Source File
-# Begin Source File
-
 SOURCE=.\res\ico3\LargeIcons.png
 # End Source File
 # Begin Source File
 
 SOURCE=.\res\Login.wav
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\Styles\Office2007Aqua.dll
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\Styles\Office2007Black.dll
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\Styles\Office2007Scenic.dll
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\Styles\Office2007Silver.dll
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\Styles\Office2007White.dll
 # End Source File
 # Begin Source File
 
@@ -817,10 +788,6 @@ SOURCE=.\res\ico3\SmallIcons.png
 # Begin Source File
 
 SOURCE=.\res\upx.exe
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\Styles\WinXP.Luna.cjstyles
 # End Source File
 # End Target
 # End Project

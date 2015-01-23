@@ -20,11 +20,16 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CMsgBox)
 	enum { IDD = IDD_MSGBOX };
-	CXTPButton	m_text;
-	CXTPButton	m_ico;
-	CXTPButton	m_button;
-	CXTPButton	m_show;
-	CXTPButton	m_send;
+	//CXTPButton	m_text;
+	//CXTPButton	m_ico;
+	//CXTPButton	m_button;
+	//CXTPButton	m_show;
+	//CXTPButton	m_send;
+	CButton	m_text;
+	CButton	m_ico;
+	CButton	m_button;
+	CButton	m_show;
+	CButton	m_send;
 	CStatic	m_Icons1;
 	CStatic	m_Icons2;
 	CStatic	m_Icons3;

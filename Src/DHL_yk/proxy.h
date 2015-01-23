@@ -14,10 +14,11 @@
 #include <afxext.h>
 #endif
 
+
 class CProxy : public CFormView
 {
 protected:
-	CProxy();           // protected constructor used by dynamic creation
+	
 	DECLARE_DYNCREATE(CProxy)
 
 // Form Data
@@ -34,6 +35,8 @@ public:
 
 	CComboBox	m_long_nema;
 	//}}AFX_DATA
+
+	CProxy();           // protected constructor used by dynamic creation
 
 // Attributes
 public:

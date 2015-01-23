@@ -37,7 +37,7 @@ Windows 7								WINVER=0x0600
 #include <winsock2.h>
 #include <winioctl.h>
 #define MFCXLIB_STATIC 
-#include "XTToolkitPro.h"
+//#include "XTToolkitPro.h"
 
 #include "include\IOCPServer.h"
 #include "macros.h"

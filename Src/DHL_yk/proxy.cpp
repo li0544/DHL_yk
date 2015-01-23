@@ -19,6 +19,8 @@ extern CPcView* g_pConnectView;
 /////////////////////////////////////////////////////////////////////////////
 // CProxy
 
+CProxy* g_pProxy;
+
 IMPLEMENT_DYNCREATE(CProxy, CFormView)
 
 //CString ftp_net= "baihej.oicp.net";

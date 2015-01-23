@@ -63,7 +63,7 @@ BOOL CGh0stView::PreCreateWindow(CREATESTRUCT& cs)
 {
 	// TODO: Modify the Window class or styles here by modifying
 	//  the CREATESTRUCT cs
-	cs.style |= WS_CLIPCHILDREN;		//裁剪子窗口
+	//cs.style |= WS_CLIPCHILDREN;		//裁剪子窗口
 	return CView::PreCreateWindow(cs);
 }
 
@@ -123,7 +123,7 @@ BOOL CGh0stView::AddView(CRuntimeClass* pViewClass, LPCTSTR lpszTitle)
 	}
 	END_CATCH_ALL
 		
-		DWORD dwStyle = AFX_WS_DEFAULT_VIEW;
+	DWORD dwStyle = AFX_WS_DEFAULT_VIEW;
 	dwStyle &= ~WS_BORDER;
 	
 	int nTab = m_wndTabControl.GetItemCount();
@@ -149,12 +149,6 @@ BOOL CGh0stView::AddView(CRuntimeClass* pViewClass, LPCTSTR lpszTitle)
 	
 	pWnd->SetOwner(this);
 	
-	//strLog.Format("%s\r\n", GetTextFromTCItem(0));
-	//sendLog();
-	//SetTextTCItem(0, _T("zzzz"));
-	//strLog = "11111";
-	//SetTextTCItem(0, (LPSTR)(LPCTSTR)strLog);
-
 	return TRUE;
 	
 }
@@ -223,7 +217,7 @@ HWND CGh0stView::TCItem_GetHandle(int index)
 	return (HWND)item.lParam;
 }
 
-HWND CGh0stView::TCSelItem_GetHandle()
+HWND CGh0stView::TCItemSel_GetHandle()
 {
 	int nCurSel = m_wndTabControl.GetCurSel();
 	return TCItem_GetHandle(nCurSel);
@@ -250,6 +244,12 @@ LPSTR CGh0stView::TCItem_GetText(int index)
 	return item.pszText;
 }
 
+LPSTR CGh0stView::TCItemSel_GetText()
+{
+	int nCurSel = m_wndTabControl.GetCurSel();
+	return TCItem_GetText(nCurSel);
+}
+
 void CGh0stView::OnSize(UINT nType, int cx, int cy) 
 {
 	CView::OnSize(nType, cx, cy);
@@ -257,22 +257,22 @@ void CGh0stView::OnSize(UINT nType, int cx, int cy)
 	if (m_wndTabControl.GetSafeHwnd())
 		m_wndTabControl.MoveWindow(0, 0, cx, cy-l_Botton-l_Split_C);
 
-	CWnd *pwnd2;
+	CWnd *pWnd1;
 	HWND hWnd = TCItem_GetHandle(TabIndex);
-	pwnd2 = CWnd::FromHandle(hWnd);
+	pWnd1 = CWnd::FromHandle(hWnd);
 	CRect rect1;
 	m_wndTabControl.GetItemRect(0, &rect1);
 	int i_tit_h = rect1.bottom - rect1.top;
-	if (pwnd2) 	
-		pwnd2->SetWindowPos(NULL, 0, 0, cx, cy-l_Botton-l_Split_C-i_tit_h, SWP_NOZORDER|SWP_NOMOVE);
+	if (pWnd1) 	
+		pWnd1->SetWindowPos(NULL, 0, 0, cx, cy-l_Botton-l_Split_C-i_tit_h, SWP_NOZORDER|SWP_NOMOVE);
 
 	//log
-	CWnd *pwnd; 
-	pwnd = GetDlgItem(ID_LIST_LOG);
-	if (pwnd)
+	CWnd *pWnd2; 
+	pWnd2 = GetDlgItem(ID_LIST_LOG);
+	if (pWnd2)
 	{				
-		pwnd->SetWindowPos(NULL, 0, 0, cx, l_Botton, SWP_NOZORDER|SWP_NOMOVE);
-		pwnd->SetWindowPos(NULL, 0, cy - l_Botton,0,0, SWP_NOZORDER|SWP_NOSIZE);
+		pWnd2->SetWindowPos(NULL, 0, 0, cx, l_Botton, SWP_NOZORDER|SWP_NOMOVE);
+		pWnd2->SetWindowPos(NULL, 0, cy - l_Botton,0,0, SWP_NOZORDER|SWP_NOSIZE);
 	}
 }
 
@@ -281,17 +281,35 @@ void CGh0stView::UpdateDocTitle()
 	GetDocument()->UpdateFrameCounts();
 }
 
+//切换分组
 void CGh0stView::OnSelectedChanged(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	UNUSED_ALWAYS(pNMHDR);
 	*pResult = 0;
 	
 	UpdateDocTitle();
-	
+	//隐藏原始列表
+	CWnd* pWnd;
+	CRect rect;
+	pWnd = CWnd::FromHandle(TCItem_GetHandle(TabIndex));
+	if (pWnd) 
+	{
+		pWnd->GetClientRect(&rect);
+		pWnd->SetWindowPos(NULL, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOMOVE);
+	}
+
+	TabIndex = m_wndTabControl.GetCurSel();
 	CFrameWnd* pFrame = GetParentFrame();
-	CView* pView = DYNAMIC_DOWNCAST(CView, CWnd::FromHandle(TCSelItem_GetHandle()));
+	CView* pView = DYNAMIC_DOWNCAST(CView, CWnd::FromHandle(TCItemSel_GetHandle()));
 	ASSERT_KINDOF(CView, pView);
 	
+	CRect rect1;
+	CRect rect2;
+	m_wndTabControl.GetClientRect(&rect1);
+	m_wndTabControl.GetItemRect(0, &rect2);
+	pView->SetWindowPos(NULL, 0, 0, rect1.right, rect1.bottom-(rect2.bottom-rect2.top), SWP_NOZORDER | SWP_NOMOVE);
+	//pView->Invalidate();
+
 	pFrame->SetActiveView(pView);
 }
 

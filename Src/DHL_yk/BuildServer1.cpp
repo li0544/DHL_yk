@@ -279,7 +279,7 @@ BOOL BuildServer::OnInitDialog()
 	int i=0;
 	for ( i = 0; i < nTabs; i++ )
 	{
-		strTemp = g_pTabView->m_wndTabControl.GetItem(i)->GetCaption();
+		strTemp = g_pTabView->TCItem_GetText(i);
 		int n = strTemp.ReverseFind('(');
 		if ( n > 0 )
 		{

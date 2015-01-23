@@ -27,18 +27,18 @@ LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE MOVEABLE PURE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE MOVEABLE PURE 
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE MOVEABLE PURE 
 BEGIN
     "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
     "#define _AFX_NO_OLE_RESOURCES\r\n"
@@ -103,7 +103,7 @@ IDI_ICON_DDOS           ICON    DISCARDABLE     "res\\CS icon.ico"
 // Menu
 //
 
-IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+IDR_MAINFRAME MENU DISCARDABLE 
 BEGIN
     POPUP "程序(&A)"
     BEGIN
@@ -115,6 +115,7 @@ BEGIN
     POPUP "查看(&V)"
     BEGIN
         MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
     END
     POPUP "帮助(&H)"
     BEGIN
@@ -384,8 +385,8 @@ FONT 9, "宋体"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,18,19,20,20
     PUSHBUTTON      "确定",IDOK,116,47,50,15,WS_GROUP
-    LTEXT           "大灰狼远程管理软件 小七免杀论坛",IDC_STATIC,51,15,128,8
-    LTEXT           "版权：小七免杀论坛 (C) 2013",IDC_STATIC,51,30,126,8
+    LTEXT           "U0 2015",IDC_STATIC,51,15,128,8
+    LTEXT           "版权：wp (C) 2015",IDC_STATIC,51,30,126,8
 END
 
 IDD_FILE DIALOGEX 0, 0, 358, 275
@@ -1011,18 +1012,12 @@ BEGIN
     BEGIN
         BLOCK "080404b0"
         BEGIN
-            VALUE "Comments", "\0"
-            VALUE "CompanyName", "\0"
             VALUE "FileDescription", " \0"
             VALUE "FileVersion", " \0"
-            VALUE "InternalName", "\0"
             VALUE "LegalCopyright", " \0"
-            VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", " \0"
-            VALUE "PrivateBuild", "\0"
             VALUE "ProductName", " \0"
             VALUE "ProductVersion", " \0"
-            VALUE "SpecialBuild", "\0"
         END
     END
     BLOCK "VarFileInfo"
@@ -1040,7 +1035,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
+GUIDELINES DESIGNINFO MOVEABLE PURE 
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
@@ -1197,7 +1192,7 @@ IDC_DOT                 CURSOR  DISCARDABLE     "res\\dot.cur"
 // Toolbar
 //
 
-IDR_TOOLBAR1 TOOLBAR DISCARDABLE  24, 24
+IDR_TOOLBAR1 TOOLBAR MOVEABLE PURE  24, 24
 BEGIN
     BUTTON      IDT_LOCAL_PREV
     SEPARATOR
@@ -1209,7 +1204,7 @@ BEGIN
     BUTTON      IDT_LOCAL_STOP
 END
 
-IDR_TOOLBAR2 TOOLBAR DISCARDABLE  24, 24
+IDR_TOOLBAR2 TOOLBAR MOVEABLE PURE  24, 24
 BEGIN
     BUTTON      IDT_REMOTE_PREV
     SEPARATOR
@@ -1221,7 +1216,7 @@ BEGIN
     BUTTON      IDT_REMOTE_STOP
 END
 
-IDR_TOOLBAR3 TOOLBAR DISCARDABLE  32, 32
+IDR_TOOLBAR3 TOOLBAR MOVEABLE PURE  32, 32
 BEGIN
     BUTTON      IDM_FILEMANAGER
     BUTTON      IDM_SCREENSPY
@@ -1245,18 +1240,18 @@ END
 // Bitmap
 //
 
-IDR_TOOLBAR1            BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
-IDR_TOOLBAR2            BITMAP  DISCARDABLE     "res\\toolbar4.bmp"
-IDR_TOOLBAR3            BITMAP  DISCARDABLE     "res\\toolbar2.bmp"
-IDB_TOOLBAR_ENABLE      BITMAP  DISCARDABLE     "res\\Bitmap_4.bmp"
-IDB_TOOLBAR_DISABLE     BITMAP  DISCARDABLE     "res\\Bitmap_5.bmp"
+IDR_TOOLBAR1            BITMAP  MOVEABLE PURE   "res\\toolbar1.bmp"
+IDR_TOOLBAR2            BITMAP  MOVEABLE PURE   "res\\toolbar4.bmp"
+IDR_TOOLBAR3            BITMAP  MOVEABLE PURE   "res\\toolbar2.bmp"
+IDB_TOOLBAR_ENABLE      BITMAP  MOVEABLE PURE   "res\\Bitmap_4.bmp"
+IDB_TOOLBAR_DISABLE     BITMAP  MOVEABLE PURE   "res\\Bitmap_5.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // SKIN
 //
 
-IDR_SKIN                SKIN    DISCARDABLE     "res\\aero.she"
+IDR_SKIN                SKIN    MOVEABLE PURE   "res\\aero.she"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1328,23 +1323,23 @@ END
 // WAVE
 //
 
-IDR_WAVE1               WAVE    DISCARDABLE     "res\\offline.wav"
-IDR_WAVE2               WAVE    DISCARDABLE     "res\\login.wav"
-IDR_WAVE3               WAVE    DISCARDABLE     "res\\Setting.wav"
+IDR_WAVE1               WAVE    MOVEABLE PURE   "res\\offline.wav"
+IDR_WAVE2               WAVE    MOVEABLE PURE   "res\\login.wav"
+IDR_WAVE3               WAVE    MOVEABLE PURE   "res\\Setting.wav"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // UPX
 //
 
-IDR_UPX                 UPX     DISCARDABLE     "res\\upx.exe"
+IDR_UPX                 UPX     MOVEABLE PURE   "res\\upx.exe"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // 24
 //
 
-1                       24      DISCARDABLE     "res\\default1.bin"
+1                       24      MOVEABLE PURE   "res\\default1.bin"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1353,11 +1348,18 @@ IDR_UPX                 UPX     DISCARDABLE     "res\\upx.exe"
 
 STRINGTABLE DISCARDABLE 
 BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
     ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
     ID_STAUTSTIP            "就绪"
     ID_STAUTSSPEED          "发送: 0.00 kb/s 接收: 0.00 kb/s"
     ID_STAUTSPORT           "端口: 2012"
     ID_STAUTSCOUNT          "上线主机: 0"
+    ID_LIST_LOG             "日志列表"
+    ID_LIST_PC              "主机列表"
+    ID_FORM_SYS_COUNT       "操作系统分组统计"
+    ID_FORM_UPDATE_IP       "更新域名"
+    ID_FORM_PROXY           "远程连接"
+    IDC_TABCONTROL          "tabCtrl"
 END
 
 STRINGTABLE DISCARDABLE 
@@ -1422,8 +1424,6 @@ END
 STRINGTABLE DISCARDABLE 
 BEGIN
     IDM_ADD_SERVER          "服_务_器"
-    ID_m_skin_Luna          "11111111111111"
-    ID_m_skin_Royale        "111111111111"
 END
 
 STRINGTABLE DISCARDABLE 

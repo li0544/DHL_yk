@@ -39,15 +39,21 @@ static char THIS_FILE[] = __FILE__;
 
 #define WM_ICONMESSAGE   WM_USER + 100
 
-CPcView* g_pConnectView = NULL; //在NotifyProc中初始化
-extern CGh0stView* g_pTabView;
-extern CLogView* g_pLogView;
-//extern CUPDATEIP* g_pcupdateip;
+extern CPcView*     g_pConnectView; //在NotifyProc中初始化
+extern CGh0stView*	g_pTabView;
+extern CLogView*	g_pLogView;
+extern CShowNum*	g_pNumDlg;
+extern CUPDATEIP*	g_pUpdateIP;
+extern CProxy*		g_pProxy;
+
 //class CUPDATEIP* g_pcupdateip;
 
 CIOCPServer *m_iocpServer = NULL;
 CString		m_PassWord = "password";
 CMainFrame	*g_pFrame; // 在CMainFrame::CMainFrame()中初始化
+
+//CXTPDockingPane* pwndPaneNum;		//客户端分组统计
+//CXTPCommandBar* pMenuBar;
 
 char Bt_szName[150] = {0};//
 
@@ -72,15 +78,17 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_TIMER()
 	ON_MESSAGE(WM_SYSTRAY,OnSystray)
 	ON_COMMAND(IDM_NEWSTIPS, OnNewstips)
+	ON_WM_SIZE()
 	ON_UPDATE_COMMAND_UI(ID_STAUTSSPEED, OnUpdateStatusBar)
 	ON_UPDATE_COMMAND_UI(ID_STAUTSPORT, OnUpdateStatusBar)
 	ON_UPDATE_COMMAND_UI(ID_STAUTSCOUNT, OnUpdateStatusBar)
 	ON_COMMAND(ID_OPTIONS_FRAMETHEME, OnFrameTheme)
 	ON_UPDATE_COMMAND_UI(ID_OPTIONS_FRAMETHEME, OnUpdateFrameTheme)
+	ON_WM_SHOWWINDOW()
 	//}}AFX_MSG_MAP
-	ON_XTP_CREATECONTROL()
-	ON_MESSAGE(XTPWM_DOCKINGPANE_NOTIFY, OnDockingPaneNotify)
-	ON_COMMAND(XTP_ID_CUSTOMIZE, OnCustomize)	
+	//ON_XTP_CREATECONTROL()
+	//ON_MESSAGE(XTPWM_DOCKINGPANE_NOTIFY, OnDockingPaneNotify)
+	//ON_COMMAND(XTP_ID_CUSTOMIZE, OnCustomize)	
 //	ON_COMMAND_RANGE(ID_OPTIONS_STYLEBLUE, ID_OPTIONS_STYLEWHITE, OnOptionsStyle)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_OPTIONS_STYLEBLUE, ID_OPTIONS_STYLEWHITE, OnUpdateOptionsStyle)
 
@@ -172,8 +180,8 @@ BOOL ReleaseRes(CString strFileName,WORD wResID,CString strFileType)
     }    
    
     // 查找资源文件中、加载资源到内存、得到资源大小    
-    HRSRC   hrsc =  FindResource(NULL, MAKEINTRESOURCE(wResID), strFileType);    
-    HGLOBAL hG = LoadResource(NULL, hrsc);    
+    HRSRC   hrsc   = FindResource(NULL, MAKEINTRESOURCE(wResID), strFileType);    
+    HGLOBAL hG     = LoadResource(NULL, hrsc);    
     DWORD   dwSize = SizeofResource( NULL,  hrsc);    
    
     // 写入文件    
@@ -274,9 +282,9 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
-	AfxGetApp()->m_nCmdShow = SW_HIDE;
+	//AfxGetApp()->m_nCmdShow = SW_HIDE;
 	if (CFrameWnd::OnCreate(lpCreateStruct) == -1) return -1;
-	this->CenterWindow(CWnd::GetDesktopWindow());
+	//this->CenterWindow(CWnd::GetDesktopWindow());
 
 	if (!m_wndStatusBar.Create(this) ||
 		!m_wndStatusBar.SetIndicators(indicators,
@@ -286,51 +294,12 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;      // fail to create
 	}
 
-	if (!InitCommandBars())
-		return -1;
-
-	CXTPCommandBars* pCommandBars = GetCommandBars();
-	if(pCommandBars == NULL)
-	{
-		TRACE0("Failed to create command bars object.\n");
-		return -1;      // fail to create
-	}
 
     //设置下面状态栏
 	m_wndStatusBar.SetPaneInfo(0, m_wndStatusBar.GetItemID(0), SBPS_STRETCH, NULL);
 	m_wndStatusBar.SetPaneInfo(1, m_wndStatusBar.GetItemID(1), SBPS_NORMAL, 250);
 	m_wndStatusBar.SetPaneInfo(2, m_wndStatusBar.GetItemID(2), SBPS_NORMAL, 120);
 	m_wndStatusBar.SetPaneInfo(3, m_wndStatusBar.GetItemID(3), SBPS_NORMAL, 120);
-/*
-	m_wndStatusBar.EnableCustomization();
-
-	if (!m_TrayIcon.Create(_T(""), // Toolktip text
-		this,                       // Parent window
-		IDR_MAINFRAME,               // Icon resource ID
-		IDR_MINIMIZE,             // Resource ID of popup menu
-		IDM_SHOW,                // Default menu item for popup menu
-		false))                     // True if default menu item is located by position
-	{
-		TRACE0("Failed to create tray icon\n");
-		return -1;
-	}
-	*/
-	
-
-	//此处代码在win7以上系统中出错,注释后程序运行正常  次问题以解决，上面有多次初始化代码，已删除
-	CXTPCommandBar* pMenuBar = pCommandBars->SetMenu(_T("Menu Bar"), IDR_MAINFRAME);	//_T()
-	pMenuBar->SetFlags(xtpFlagAddMDISysPopup);
-		
-	CXTPToolBar* pCommandBar = (CXTPToolBar*)(pCommandBars->Add(_T("工具栏(T)"), xtpBarTop));		//Standard
-	if (!pCommandBar || !pCommandBar->LoadToolBar(IDR_TOOLBAR3)) //
-	{
-		TRACE0("Failed to create toolbar\n");
-		return -1;
-	}
-	
-	//显示工具栏文字
-	pCommandBars->GetCommandBarsOptions()->bShowTextBelowIcons = TRUE;
-	pCommandBars->GetCommandBarsOptions()->ShowKeyboardCues(xtpKeyboardCuesShowWindowsDefault);
 
 /*
 
@@ -364,39 +333,35 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 */
 
+	//m_paneManager.InstallDockingPanes(this);
+	//m_paneManager.SetTheme(xtpPaneThemeVisualStudio2010); // 设置主题 xtpPaneThemeVisualStudio2010
 
+	//CXTPDockingPane* pwndPaneLog = CreatePane(235, 150, RUNTIME_CLASS(CLogView), _T("日志信息"), xtpPaneDockBottom);
+	//CXTPDockingPane* pwndPaneNum = CreatePane(235, 150, RUNTIME_CLASS(CShowNum), _T("主机统计"), xtpPaneDockBottom);
+	//CXTPDockingPane* pwndPaneUPDATEIP = CreatePane(235, 150, RUNTIME_CLASS(CUPDATEIP), _T("域名更新"), xtpPaneDockBottom);
+	//CXTPDockingPane* pwndPaneproxy = CreatePane(235, 150, RUNTIME_CLASS(CProxy), _T("远程连接"), xtpPaneDockBottom);
 
-	m_paneManager.InstallDockingPanes(this);
-	m_paneManager.SetTheme(xtpPaneThemeVisualStudio2010); // 设置主题 xtpPaneThemeVisualStudio2010
+	//m_paneManager.AttachPane( pwndPaneUPDATEIP, pwndPaneLog);
+	//m_paneManager.AttachPane(pwndPaneproxy, pwndPaneLog);
+	//m_paneManager.AttachPane(pwndPaneNum, pwndPaneLog);
 
-	CXTPDockingPane* pwndPaneLog = CreatePane(235, 150, RUNTIME_CLASS(CLogView), _T("日志信息"), xtpPaneDockBottom);
-	CXTPDockingPane* pwndPaneNum = CreatePane(58, 150, RUNTIME_CLASS(CShowNum), _T("主机统计"), xtpPaneDockRight, pwndPaneLog);
-	//CXTPDockingPane* pwndPaneChoose = CreatePane(235, 150, RUNTIME_CLASS(CMoreChoose), _T("筛选主机"), xtpPaneDockBottom);
-	CXTPDockingPane* pwndPaneUPDATEIP = CreatePane(235, 150, RUNTIME_CLASS(CUPDATEIP), _T("域名更新"), xtpPaneDockBottom);
-//    CXTPDockingPane* pwndPaneBatch = CreatePane(235, 150, RUNTIME_CLASS(CBatch), _T("批量命令"), xtpPaneDockBottom);
-//	CXTPDockingPane* pwndPaneplay = CreatePane(260, 145, RUNTIME_CLASS(CBuildServer), _T("整蛊娱乐"), xtpPaneDockBottom);
-	CXTPDockingPane* pwndPaneproxy = CreatePane(235, 150, RUNTIME_CLASS(CProxy), _T("远程连接"), xtpPaneDockBottom);
+	//pwndPaneLog->Select();
+	//pwndPaneLog->SetOptions(xtpPaneNoCaption);
+	//pwndPaneNum->SetOptions(xtpPaneNoCaption);
+	//pwndPaneUPDATEIP->SetOptions(xtpPaneNoCaption);
+	//pwndPaneproxy->SetOptions(xtpPaneNoCaption);
 
-	//m_paneManager.AttachPane( pwndPaneChoose, pwndPaneLog );
-	m_paneManager.AttachPane( pwndPaneUPDATEIP, pwndPaneLog);
-//	m_paneManager.AttachPane( pwndPaneBatch, pwndPaneChoose);
-	m_paneManager.AttachPane( pwndPaneproxy, pwndPaneUPDATEIP );
+	/*
+	g_pLogView     = new CLogView();
+	g_pNumDlg      = new CShowNum();
+	g_pUpdateIP    = new CUPDATEIP();
+	g_pProxy       = new CProxy();
 
-	pwndPaneLog->Select();
-	pwndPaneLog->SetOptions(xtpPaneNoCaption);
-	pwndPaneNum->SetOptions(xtpPaneNoCaption);
-//	pwndPaneChoose->SetOptions(xtpPaneNoCaption);
-	pwndPaneUPDATEIP->SetOptions(xtpPaneNoCaption);
-//	pwndPaneBatch->SetOptions(xtpPaneNoCaption);
-//	pwndPaneplay->SetOptions(xtpPaneNoCaption);
-	pwndPaneproxy->SetOptions(xtpPaneNoCaption);
-/*
-	XTPColorManager()->DisableLunaColors(TRUE);
-	CXTPPaintManager::SetTheme(xtpThemeOffice2003);
-	LoadCommandBars(_T("CommandBars"));
-	
-	SetTimer(1,1000,NULL); 
-*/
+	CRect rect;
+	GetClientRect(&rect);
+	g_pLogView->Create(NULL, _T(""), WS_VISIBLE | WS_CHILD | LVS_REPORT, CRect(0, 300, rect.right, 400), this, ID_LIST_LOG);
+	*/
+
 	m_hDrawIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 	m_hEmptyIcon = AfxGetApp()->LoadIcon(IDI_SYSTRAY1);
     m_NotifyIcon.cbSize = sizeof(NOTIFYICONDATA); 
@@ -453,8 +418,8 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 	cs.cx = 925;
 	cs.cy = 556;
 	cs.style &= ~FWS_ADDTOTITLE;
-	cs.style &= ~WS_MAXIMIZEBOX;   //去掉最大化
-    cs.style &= ~WS_THICKFRAME;    //禁止用户改变窗口大小
+	//cs.style &= ~WS_MAXIMIZEBOX;   //去掉最大化
+    //cs.style &= ~WS_THICKFRAME;    //禁止用户改变窗口大小
 	cs.style &= ~FWS_ADDTOTITLE;
 
 	
@@ -477,7 +442,7 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 	stra1=Dig.Base64Decode(JS_szName);      //解密标题
 	cs.lpszName = stra1;
 
-	OnAddSkin();  //加皮肤
+	//OnAddSkin();  //加皮肤
 //加密标题代码区结束
 	return TRUE;
 }
@@ -516,16 +481,16 @@ void CMainFrame::Dump(CDumpContext& dc) const
 // CMainFrame message handlers
 
 
-int CMainFrame::OnCreateControl(LPCREATECONTROLSTRUCT lpCreateControl)
-{
-     if (lpCreateControl->nID == ID_APP_EXIT)
-     {
-          lpCreateControl->pControl = new CXTPRibbonControlSystemPopupBarButton();
-          return TRUE;
-     }
-
-     return FALSE;
-}
+//int CMainFrame::OnCreateControl(LPCREATECONTROLSTRUCT lpCreateControl)
+//{
+//	if (lpCreateControl->nID == ID_APP_EXIT)
+//	{
+//		lpCreateControl->pControl = new CXTPRibbonControlSystemPopupBarButton();
+//		return TRUE;
+//	}
+//
+//	return FALSE;
+//}
 
 void CALLBACK CMainFrame::NotifyProc(LPVOID lpParam, ClientContext *pContext, UINT nCode)
 {
@@ -567,6 +532,7 @@ void CALLBACK CMainFrame::NotifyProc(LPVOID lpParam, ClientContext *pContext, UI
 
 void CMainFrame::Activate(UINT nPort, UINT nMaxConnections)
 {
+
 	CString		str;
 
 	if (m_iocpServer != NULL)
@@ -789,23 +755,30 @@ void CMainFrame::OnClose()
 {
 	// TODO: Add your message handler code here and/or call default
 	CMainFrame* pMainFrame = (CMainFrame*)AfxGetMainWnd();
+
 	int iResult = MessageBox("您确认要退出？？？", " 温馨提示！", MB_ICONQUESTION|MB_YESNO);
     if(iResult != IDYES)
 		return ;
-	pMainFrame->m_TrayIcon.RemoveIcon();
+	//pMainFrame->m_TrayIcon.RemoveIcon();
 	m_iocpServer->Shutdown();
 	delete m_iocpServer;
 	// Save the current state for toolbars and menus.
-	SaveCommandBars(_T("CommandBars"));
+	//SaveCommandBars(_T("CommandBars"));
 
-	///////////////////////托盘图标删除
+	//状态栏和工具栏状态
+	//UINT iStatusBar = pMainFrame->GetMenu()->GetMenuState(ID_VIEW_STATUS_BAR, MF_CHECKED);
+	//UINT iStatusBar = pMenuBar->GetMenu()->GetMenuState(ID_VIEW_STATUS_BAR, MF_CHECKED);
+	//UINT iToolBar = pMainFrame->GetMenu()->GetMenuState(ID_VIEW_TOOLBAR, MF_CHECKED);
+	//((CGh0stApp *)AfxGetApp())->m_IniFile.SetInt("设置", "StatusBar", iStatusBar);
+	//((CGh0stApp *)AfxGetApp())->m_IniFile.SetInt("设置", "ToolBar", iToolBar);
+
+	//托盘图标删除
 	NOTIFYICONDATA tnd;
 	tnd.cbSize=sizeof(NOTIFYICONDATA);
 	tnd.hWnd=AfxGetMainWnd()->m_hWnd;
 	tnd.uID=IDR_MAINFRAME;//保证删除的是我们的图标
 	Shell_NotifyIcon(NIM_DELETE,&tnd);
-	///////////////////////////////
-
+	
 	CFrameWnd::OnClose();
 }
 
@@ -837,7 +810,7 @@ void CMainFrame::OnSysCommand(UINT nID, LPARAM lParam)
 		false);
 		*/
 		MinTray=TRUE;  //最小托盘状态
-		m_TrayIcon.MinimizeToTray(this);
+		//m_TrayIcon.MinimizeToTray(this);
 
 
 //		NOTIFYICONDATA data={0};
@@ -918,7 +891,7 @@ void CMainFrame::ShowConnectionsNumber()
 	int count = g_pTabView->m_wndTabControl.GetItemCount();
 	for (int i = 0; i < count; i++)
 	{	
-		pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->m_wndTabControl.GetItem(i)->GetHandle()));
+		pView = DYNAMIC_DOWNCAST(CPcView, CWnd::FromHandle(g_pTabView->TCItem_GetHandle(i)));
 		a += pView->m_pListCtrl->GetItemCount();
 	}
 	str.Format("上线主机: %d", a);
@@ -932,8 +905,8 @@ void CMainFrame::OnShow()
 
 	MinTray=NULL;  //桌面显示状态
 	IOCTrat=NULL;  //关闭定时器 
-	m_TrayIcon.RemoveIcon();
-	m_TrayIcon.MaximizeFromTray(this);
+	//m_TrayIcon.RemoveIcon();
+	//m_TrayIcon.MaximizeFromTray(this);
 
 }
 
@@ -945,14 +918,14 @@ void CMainFrame::OnExit()
 
 void CMainFrame::ShowToolTips(LPCTSTR lpszText)
 {	
-	m_TrayIcon.ShowBalloonTip( lpszText, _T(Bt_szName), NIIF_NONE, 5);
+	//m_TrayIcon.ShowBalloonTip( lpszText, _T(Bt_szName), NIIF_NONE, 5);
 }
 
 void CMainFrame::SetTheme(int iTheme)
 {
 	m_iTheme = iTheme;
-	XTThemeManager()->SetTheme((XTThemeStyle)m_iTheme);
-	XTPPaintManager()->SetTheme((XTPPaintTheme)m_iTheme);
+	//XTThemeManager()->SetTheme((XTThemeStyle)m_iTheme);
+	//XTPPaintManager()->SetTheme((XTPPaintTheme)m_iTheme);
 	
 	RedrawWindow( NULL, NULL, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ERASE | RDW_ALLCHILDREN );
 	
@@ -979,7 +952,7 @@ void CMainFrame::OnBuild()
 	BuildServer dlg;
 	dlg.DoModal();
 }
-
+/*
 CXTPDockingPane* CMainFrame::CreatePane(int x, int y, CRuntimeClass* pNewViewClass, CString strFormat, XTPDockingPaneDirection direction, CXTPDockingPane* pNeighbour)
 {
 	int nID = ++m_nCount;
@@ -1004,24 +977,24 @@ CXTPDockingPane* CMainFrame::CreatePane(int x, int y, CRuntimeClass* pNewViewCla
 	
 	return pwndPane;
 }
-
+*/
 LRESULT CMainFrame::OnDockingPaneNotify(WPARAM wParam, LPARAM lParam)
 {
-	if (wParam == XTP_DPN_SHOWWINDOW)
-	{
-		// get a pointer to the docking pane being shown.
-		CXTPDockingPane* pPane = (CXTPDockingPane*)lParam;
-		if (!pPane->IsValid())
-		{
-			CWnd* pWnd = NULL;
-			if (m_mapPanes.Lookup(pPane->GetID(), pWnd))
-			{
-				pPane->Attach(pWnd);
-			}
-		}
-		
-		return TRUE; // handled
-	}
+	//if (wParam == XTP_DPN_SHOWWINDOW)
+	//{
+	//	// get a pointer to the docking pane being shown.
+	//	CXTPDockingPane* pPane = (CXTPDockingPane*)lParam;
+	//	if (!pPane->IsValid())
+	//	{
+	//		CWnd* pWnd = NULL;
+	//		if (m_mapPanes.Lookup(pPane->GetID(), pWnd))
+	//		{
+	//			pPane->Attach(pWnd);
+	//		}
+	//	}
+	//	
+	//	return TRUE; // handled
+	//}
 
 	return FALSE;
 }
@@ -1046,21 +1019,21 @@ void CMainFrame::OnUpdateOptionsStyle(CCmdUI* pCmdUI)
 void CMainFrame::OnFrameTheme()
 {
 	ShowWindow(SW_NORMAL);
-	CXTPRibbonBar* pRibbonBar = (CXTPRibbonBar*)GetCommandBars()->GetAt(0);
+	//CXTPRibbonBar* pRibbonBar = (CXTPRibbonBar*)GetCommandBars()->GetAt(0);
 
-	CXTPWindowRect rc(this);
-	rc.top += (pRibbonBar->IsFrameThemeEnabled() ? -1 : +1) * GetSystemMetrics(SM_CYCAPTION);
-	MoveWindow(rc);
-	
-	pRibbonBar->EnableFrameTheme(!pRibbonBar->IsFrameThemeEnabled());
+	//CXTPWindowRect rc(this);
+	//rc.top += (pRibbonBar->IsFrameThemeEnabled() ? -1 : +1) * GetSystemMetrics(SM_CYCAPTION);
+	//MoveWindow(rc);
+	//
+	//pRibbonBar->EnableFrameTheme(!pRibbonBar->IsFrameThemeEnabled());
 
 }
 
 void CMainFrame::OnUpdateFrameTheme(CCmdUI* pCmdUI)
 {
-	CXTPRibbonBar* pRibbonBar = (CXTPRibbonBar*)GetCommandBars()->GetAt(0);
+	//CXTPRibbonBar* pRibbonBar = (CXTPRibbonBar*)GetCommandBars()->GetAt(0);
 
-	pCmdUI->SetCheck(pRibbonBar->IsFrameThemeEnabled() ? TRUE : FALSE);
+	//pCmdUI->SetCheck(pRibbonBar->IsFrameThemeEnabled() ? TRUE : FALSE);
 }
 
 void CMainFrame::OnTools() 
@@ -1199,7 +1172,7 @@ void CMainFrame::OnTimer(UINT nIDEvent)
 		Shell_NotifyIcon(NIM_MODIFY,&m_NotifyIcon);
 	}
 
-	CXTPFrameWnd::OnTimer(nIDEvent);
+	//CXTPFrameWnd::OnTimer(nIDEvent);
 }
 
 void CMainFrame::OnNewstips() 
@@ -1229,3 +1202,22 @@ void CMainFrame::OnVoiceprompt()
 	
 }
 
+
+void CMainFrame::OnSize(UINT nType, int cx, int cy) 
+{
+	CFrameWnd::OnSize(nType, cx, cy);
+	
+	// TODO: Add your message handler code here
+	if (!IsIconic())
+	{
+
+	}
+}
+
+void CMainFrame::OnShowWindow(BOOL bShow, UINT nStatus) 
+{
+	CFrameWnd::OnShowWindow(bShow, nStatus);
+	
+	// TODO: Add your message handler code here
+
+}

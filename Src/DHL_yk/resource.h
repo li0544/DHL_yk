@@ -599,6 +599,12 @@
 #define ID_STAUTSSPEED                  59395
 #define ID_STAUTSPORT                   59396
 #define ID_STAUTSCOUNT                  59397
+#define ID_LIST_LOG                     59398
+#define ID_LIST_PC                      59400
+#define ID_FORM_SYS_COUNT               59401
+#define ID_FORM_UPDATE_IP               59402
+#define ID_FORM_PROXY                   59403
+#define IDC_TABCONTROL                  59404
 #define IDM_APP_ABOUT                   65535
 
 // Next default values for new objects
