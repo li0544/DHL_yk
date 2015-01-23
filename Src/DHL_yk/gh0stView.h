@@ -14,17 +14,29 @@
 class CGh0stView : public CView
 {
 protected: // create from serialization only
-	CGh0stView();
+
 	DECLARE_DYNCREATE(CGh0stView)
 
 // Attributes
 public:
+	CGh0stView();
 	CGh0stDoc* GetDocument();
 
-	CXTPTabControl m_wndTabControl;
-	BOOL UpDateNumber();
-	void UpdateDocTitle();
-	BOOL AddGroup( LPCTSTR lpszTitle );
+	//CXTPTabControl m_wndTabControl;
+	CTabCtrl m_wndTabControl;
+	BOOL	UpDateNumber();
+	void	UpdateDocTitle();
+	BOOL	AddGroup( LPCTSTR lpszTitle );
+
+	HWND	TCItem_GetHandle(int index);
+	HWND    TCSelItem_GetHandle();
+	void    TCItem_SetText(int index, LPSTR tit);
+	LPSTR	TCItem_GetText(int index);
+	
+	//listCWnd list_wnd;
+	LONG l_Botton;
+	LONG l_Split_C;
+	int  TabIndex;
 // Operations
 public:
 // Overrides
@@ -33,6 +45,7 @@ public:
 	public:
 	virtual void OnDraw(CDC* pDC);  // overridden to draw this view
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+	virtual void OnInitialUpdate();
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -52,6 +65,8 @@ protected:
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg void OnPaint();
+	afx_msg void OnShowWindow(BOOL bShow, UINT nStatus);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 	afx_msg void OnSelectedChanged(NMHDR* pNMHDR, LRESULT* pResult);
