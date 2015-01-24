@@ -18,10 +18,10 @@
 
 #include <afxwin.h>
 
-extern WORD    Installope;  //安装运行
+extern WORD    Installope;     //安装运行
 extern UINT	   nConnect;
 extern LPCTSTR lpConnects[3];  //上线域名
-extern DWORD   dwPort[3];     //上线端口
+extern DWORD   dwPort[3];      //上线端口
 
 void DelSelf(BOOL FHshanchu);   //删除服务端函数定义
 void SetGroup(LPCTSTR lpServiceName, LPCTSTR lpGroupName);  //修改分组

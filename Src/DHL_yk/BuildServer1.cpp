@@ -813,16 +813,16 @@ void BuildServer::OnBuild()   //void CBuildServer::OnBuild()   CBuildDialog::OnB
 		MessageBox("请输入域名上线信息...");
 		return;
 	}
-   if(m_remote_host2.IsEmpty())
-	{
-		MessageBox("请输入QQ上线信息...");
-		return;
-	}
-   if(m_remote_host3.IsEmpty())
-	{
-		MessageBox("请输入网盘上线信息...");
-		return;
-	}
+//    if(m_remote_host2.IsEmpty())
+// 	{
+// 		MessageBox("请输入QQ上线信息...");
+// 		return;
+// 	}
+//    if(m_remote_host3.IsEmpty())
+// 	{
+// 		MessageBox("请输入网盘上线信息...");
+// 		return;
+// 	}
 
 	if(m_remote_name.IsEmpty())
 	{
