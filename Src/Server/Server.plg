@@ -6,47 +6,13 @@
 --------------------Configuration: Server - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating command line "rc.exe /l 0x804 /fo"vs6_Debug/Server.res" /d "_DEBUG" "D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\Server.rc"" 
-Creating temporary file "C:\Users\wp0544\AppData\Local\Temp\RSP548F.tmp" with contents
+Creating temporary file "C:\Users\wp0544\AppData\Local\Temp\RSPFE47.tmp" with contents
 [
 /nologo /MT /W3 /GX /ZI /Od /I "../common" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_DLL" /Fr"vs6_Debug/" /Fo"vs6_Debug/" /Fd"vs6_Debug/" /FD /GZ /c 
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\common\AudioCode.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\AudioManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\Buffer.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\ClientSocket.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\DDOSManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\Dialupass.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\FileManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\install.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\KernelManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\KeyboardManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\Manager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\Myfunction.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\RegEditEx.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\RegeditOpt.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\Registry.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\RegManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\ScreenManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\ScreenSpy.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\SerManager.cpp"
 "D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\Server.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\ServerStart.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\ShellManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\SystemManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\until.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\VideoCap.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\VideoManager.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\WaveIn.cpp"
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\common\WaveOut.cpp"
 ]
-Creating command line "cl.exe @C:\Users\wp0544\AppData\Local\Temp\RSP548F.tmp" 
-Creating temporary file "C:\Users\wp0544\AppData\Local\Temp\RSP5490.tmp" with contents
-[
-/nologo /MT /W3 /GX /ZI /Od /I "../common" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_DLL" /Fr"vs6_Debug/" /Fp"vs6_Debug/Server.pch" /Yc"stdafx.h" /Fo"vs6_Debug/" /Fd"vs6_Debug/" /FD /GZ /c 
-"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\StdAfx.cpp"
-]
-Creating command line "cl.exe @C:\Users\wp0544\AppData\Local\Temp\RSP5490.tmp" 
-Creating temporary file "C:\Users\wp0544\AppData\Local\Temp\RSP54A1.tmp" with contents
+Creating command line "cl.exe @C:\Users\wp0544\AppData\Local\Temp\RSPFE47.tmp" 
+Creating temporary file "C:\Users\wp0544\AppData\Local\Temp\RSPFE48.tmp" with contents
 [
 ../common/zlib/zlib.lib ../common/G729a.lib Shlwapi.lib MSVCRT.LIB /nologo /subsystem:windows /incremental:yes /pdb:"vs6_Debug/U0_Server.pdb" /debug /machine:I386 /nodefaultlib:"LIBCMT" /out:"../bin/Update/U0_Server.dat" /pdbtype:sept 
 ".\vs6_Debug\AudioCode.obj"
@@ -80,98 +46,17 @@ Creating temporary file "C:\Users\wp0544\AppData\Local\Temp\RSP54A1.tmp" with co
 ".\vs6_Debug\WaveOut.obj"
 ".\vs6_Debug\Server.res"
 ]
-Creating command line "link.exe @C:\Users\wp0544\AppData\Local\Temp\RSP54A1.tmp"
+Creating command line "link.exe @C:\Users\wp0544\AppData\Local\Temp\RSPFE48.tmp"
 <h3>Output Window</h3>
-Compiling resources...
 Compiling...
-StdAfx.cpp
-Compiling...
-AudioCode.cpp
-AudioManager.cpp
-Buffer.cpp
-ClientSocket.cpp
-DDOSManager.cpp
-Dialupass.cpp
-FileManager.cpp
-c:\program files (x86)\microsoft visual studio\vc98\include\list(125) : warning C4786: '?$reverse_bidirectional_iterator@Viterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AAV43@PAV43@H' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(128) : warning C4786: '?$reverse_bidirectional_iterator@Vconst_iterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@ABV43@PBV43@H' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(137) : warning C4786: '??0?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@IABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@ABV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@1@@Z' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(145) : warning C4786: '??0?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@PBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@0ABV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@1@@Z' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(154) : warning C4786: '??0?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@Vconst_iterator@01@0ABV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@1@@Z' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(176) : warning C4786: '?rbegin@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE?AV?$reverse_bidirectional_iterator@Viterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AAV43@PAV43@H@2@XZ' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(178) : warning C4786: '?rbegin@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QBE?AV?$reverse_bidirectional_iterator@Vconst_iterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@ABV43@PBV43@H@2@XZ' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(180) : warning C4786: '?rend@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE?AV?$reverse_bidirectional_iterator@Viterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AAV43@PAV43@H@2@XZ' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(182) : warning C4786: '?rend@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QBE?AV?$reverse_bidirectional_iterator@Vconst_iterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@ABV43@PBV43@H@2@XZ' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(300) : warning C4786: '?remove_if@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAEXV?$binder2nd@U?$not_equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@Z' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(131) : warning C4786: 'std::reverse_bidirectional_iterator<std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::iterator,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,int>' : identifier was truncated to '255' characters in the debug information
-        c:\program files (x86)\microsoft visual studio\vc98\include\list(129) : while compiling class-template member function '__thiscall std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(const std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > &)'
-c:\program files (x86)\microsoft visual studio\vc98\include\list(131) : warning C4786: 'std::reverse_bidirectional_iterator<std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::const_iterator,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const *,int>' : identifier was truncated to '255' characters in the debug information
-        c:\program files (x86)\microsoft visual studio\vc98\include\list(129) : while compiling class-template member function '__thiscall std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(const std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > &)'
-install.cpp
-KernelManager.cpp
-c:\program files (x86)\microsoft visual studio\vc98\include\list(125) : warning C4786: '?$reverse_bidirectional_iterator@Viterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AAV43@PAV43@H' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(128) : warning C4786: '?$reverse_bidirectional_iterator@Vconst_iterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@ABV43@PBV43@H' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(137) : warning C4786: '??0?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@IABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@ABV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@1@@Z' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(145) : warning C4786: '??0?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@PBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@0ABV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@1@@Z' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(154) : warning C4786: '??0?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@Vconst_iterator@01@0ABV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@1@@Z' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(176) : warning C4786: '?rbegin@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE?AV?$reverse_bidirectional_iterator@Viterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AAV43@PAV43@H@2@XZ' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(178) : warning C4786: '?rbegin@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QBE?AV?$reverse_bidirectional_iterator@Vconst_iterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@ABV43@PBV43@H@2@XZ' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(180) : warning C4786: '?rend@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE?AV?$reverse_bidirectional_iterator@Viterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AAV43@PAV43@H@2@XZ' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(182) : warning C4786: '?rend@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QBE?AV?$reverse_bidirectional_iterator@Vconst_iterator@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@ABV43@PBV43@H@2@XZ' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\list(300) : warning C4786: '?remove_if@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAEXV?$binder2nd@U?$not_equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@Z' : identifier was truncated to '255' characters in the browser information
-        d:\program\tem_c\0001.Ô¶¿Ø\0110.dhl_yk_ddos\src\server\common\filemanager.h(33) : see reference to class template instantiation 'std::list<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >' being compiled
-c:\program files (x86)\microsoft visual studio\vc98\include\xlocale(467) : warning C4786: 'std::reverse_bidirectional_iterator<std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::iterator,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,int>' : identifier was truncated to '255' characters in the debug information
-c:\program files (x86)\microsoft visual studio\vc98\include\xlocale(467) : warning C4786: 'std::reverse_bidirectional_iterator<std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::const_iterator,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const *,int>' : identifier was truncated to '255' characters in the debug information
-KeyboardManager.cpp
-Manager.cpp
-Myfunction.cpp
-RegEditEx.cpp
-RegeditOpt.cpp
-Registry.cpp
-RegManager.cpp
-ScreenManager.cpp
-ScreenSpy.cpp
-SerManager.cpp
 Server.cpp
-Generating Code...
-c:\program files (x86)\microsoft visual studio\vc98\include\list(131) : warning C4786: 'std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >' : identifier was truncated to '255' characters in the debug information
-c:\program files (x86)\microsoft visual studio\vc98\include\list(153) : warning C4786: 'std::list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::~list<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >' : identifier was truncated to '255' characters in the debug information
-Compiling...
-ServerStart.cpp
-ShellManager.cpp
-SystemManager.cpp
-until.cpp
-VideoCap.cpp
-VideoManager.cpp
-WaveIn.cpp
-WaveOut.cpp
-Generating Code...
 Linking...
 LINK : warning LNK4076: invalid incremental status file "../bin/Update/U0_Server.ilk"; linking nonincrementally
 
 
 
 <h3>Results</h3>
-U0_Server.dat - 0 error(s), 27 warning(s)
+U0_Server.dat - 0 error(s), 1 warning(s)
 </pre>
 </body>
 </html>

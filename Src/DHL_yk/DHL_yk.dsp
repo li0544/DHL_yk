@@ -43,7 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /c
-# ADD CPP /nologo /MT /GX /O1 /I "CJ60lib/Include" /I "../common" /I "../../include/ToolkitPro1321" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /FD /c
+# ADD CPP /nologo /MT /GX /O1 /I "../common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "NDEBUG" /d "_AFXDLL"
@@ -53,7 +53,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /machine:I386
-# ADD LINK32 ../../lib/zlib.lib ../../lib/G729a.lib SHLWAPI.LIB nafxcw.lib ../../lib/UUID.LIB ../../lib/ToolkitPro1321vc60S.lib ../../lib/SkinH.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/U0_2015_vs6.exe"
+# ADD LINK32 ../../lib/zlib.lib ../../lib/G729a.lib SHLWAPI.LIB nafxcw.lib ../../lib/UUID.LIB  ../../lib/SkinH.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/U0_2015_vs6.exe"
 # SUBTRACT LINK32 /pdb:none
 
 !ELSEIF  "$(CFG)" == "DHL_yk - Win32 Debug"
@@ -72,7 +72,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /GX /O2 /I "CJ60lib/Include" /I "../common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /YX"stdafx.h" /FD /c
 # SUBTRACT BASE CPP /Fr
-# ADD CPP /nologo /MT /GX /ZI /Od /I "CJ60lib/Include" /I "../common" /I "../../include/ToolkitPro1321_" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /YX"stdafx.h" /FD /c
+# ADD CPP /nologo /MT /GX /ZI /Od /I "../common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fr /YX"stdafx.h" /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "NDEBUG"
@@ -83,7 +83,7 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 ../common/zlib/zlib.lib SHLWAPI.LIB nafxcw.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/¥Ûª“¿«∏ˆ»À∞Ê‘∂øÿ Beta V8.96.exe"
 # SUBTRACT BASE LINK32 /pdb:none /incremental:yes /map /debug
-# ADD LINK32 SHLWAPI.LIB nafxcw.lib ../../lib/G729a.lib ../../lib/UUID.LIB ../../lib/ToolkitPro1321vc60S.lib ../../lib/zlib.lib ../../lib/SkinH.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /nodefaultlib:"MSVCRT.lib libcmt.lib" /nodefaultlib:"LIBC.lib" /out:"../Bin/U0_2015_vs6d.exe"
+# ADD LINK32 SHLWAPI.LIB nafxcw.lib ../../lib/G729a.lib ../../lib/UUID.LIB ../../lib/zlib.lib ../../lib/SkinH.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /nodefaultlib:"MSVCRT.lib libcmt.lib" /nodefaultlib:"LIBC.lib" /out:"../Bin/U0_2015_vs6d.exe"
 # SUBTRACT LINK32 /pdb:none
 
 !ENDIF 

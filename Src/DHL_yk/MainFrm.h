@@ -89,7 +89,7 @@ protected:  // control bar embedded members
 	CXTPDockingPane* CreatePane(int x, int y, CRuntimeClass* pNewViewClass, CString strFormat, XTPDockingPaneDirection direction, CXTPDockingPane* pNeighbour = NULL);
 */
 	//CTabClientWnd m_wndClient;
-	//CTrayIcon m_TrayIcon;
+	//CXTTrayIcon m_TrayIcon;
 	CStatusBar  m_wndStatusBar;
 	//CDockingPane*        m_pActivePane;
 	//CDockingPaneManager  m_paneManager;

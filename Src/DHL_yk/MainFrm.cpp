@@ -88,7 +88,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	//}}AFX_MSG_MAP
 	//ON_XTP_CREATECONTROL()
 	//ON_MESSAGE(XTPWM_DOCKINGPANE_NOTIFY, OnDockingPaneNotify)
-	//ON_COMMAND(XTP_ID_CUSTOMIZE, OnCustomize)	
+	//ON_COMMAND(ID_CUSTOMIZE, OnCustomize)	
 //	ON_COMMAND_RANGE(ID_OPTIONS_STYLEBLUE, ID_OPTIONS_STYLEWHITE, OnOptionsStyle)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_OPTIONS_STYLEBLUE, ID_OPTIONS_STYLEWHITE, OnUpdateOptionsStyle)
 
@@ -362,6 +362,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	g_pLogView->Create(NULL, _T(""), WS_VISIBLE | WS_CHILD | LVS_REPORT, CRect(0, 300, rect.right, 400), this, ID_LIST_LOG);
 	*/
 
+	//系统托盘图片设置
 	m_hDrawIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 	m_hEmptyIcon = AfxGetApp()->LoadIcon(IDI_SYSTRAY1);
     m_NotifyIcon.cbSize = sizeof(NOTIFYICONDATA); 
@@ -370,7 +371,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	CString Lineips = Onlinetips();
 	CString Lineips1 = OnVoicepromptsm();
 	wsprintf(m_NotifyIcon.szTip,"主机数量: %d台\n语音: %s\n消息提示: %s",Zjshulian,Lineips1,Lineips);
-	m_NotifyIcon.uCallbackMessage = WM_ICONMESSAGE; 
+	m_NotifyIcon.uCallbackMessage = WM_ICONMESSAGE;		//自定义的消息名称
 	m_NotifyIcon.uFlags = NIF_MESSAGE|NIF_TIP|NIF_ICON;
 	m_NotifyIcon.hIcon = m_hDrawIcon;
 	m_NotifyIcon.uID = IDR_MAINFRAME;
@@ -420,7 +421,7 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 	cs.style &= ~FWS_ADDTOTITLE;
 	//cs.style &= ~WS_MAXIMIZEBOX;   //去掉最大化
     //cs.style &= ~WS_THICKFRAME;    //禁止用户改变窗口大小
-	cs.style &= ~FWS_ADDTOTITLE;
+	//cs.style &= ~FWS_ADDTOTITLE;
 
 	
 
@@ -809,9 +810,10 @@ void CMainFrame::OnSysCommand(UINT nID, LPARAM lParam)
 		IDM_SHOW,                // Default menu item for popup menu
 		false);
 		*/
+		
 		MinTray=TRUE;  //最小托盘状态
 		//m_TrayIcon.MinimizeToTray(this);
-
+		ShowWindow(SW_HIDE); // 当最小化市，隐藏主窗口              
 
 //		NOTIFYICONDATA data={0};
 //		_tcscpy_s(data.szInfoTitle,8,_T("Capture")); //气泡提示标题
@@ -907,7 +909,7 @@ void CMainFrame::OnShow()
 	IOCTrat=NULL;  //关闭定时器 
 	//m_TrayIcon.RemoveIcon();
 	//m_TrayIcon.MaximizeFromTray(this);
-
+	this->ShowWindow(SW_SHOWNORMAL);         // 显示主窗口
 }
 
 void CMainFrame::OnExit() 
@@ -1208,10 +1210,10 @@ void CMainFrame::OnSize(UINT nType, int cx, int cy)
 	CFrameWnd::OnSize(nType, cx, cy);
 	
 	// TODO: Add your message handler code here
-	if (!IsIconic())
-	{
+	//if (!IsIconic())
+	//{
 
-	}
+	//}
 }
 
 void CMainFrame::OnShowWindow(BOOL bShow, UINT nStatus) 
