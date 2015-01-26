@@ -6,11 +6,57 @@
 --------------------Configuration: Server - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
+Creating temporary file "C:\Users\wp0544\AppData\Local\Temp\RSPFE47.tmp" with contents
+[
+/nologo /MT /W3 /GX /ZI /Od /I "../common" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_DLL" /Fr"vs6_Debug/" /Fo"vs6_Debug/" /Fd"vs6_Debug/" /FD /GZ /c 
+"D:\Program\Tem_C\0001.Ô¶¿Ø\0110.DHL_yk_DDos\Src\Server\Server.cpp"
+]
+Creating command line "cl.exe @C:\Users\wp0544\AppData\Local\Temp\RSPFE47.tmp" 
+Creating temporary file "C:\Users\wp0544\AppData\Local\Temp\RSPFE48.tmp" with contents
+[
+../common/zlib/zlib.lib ../common/G729a.lib Shlwapi.lib MSVCRT.LIB /nologo /subsystem:windows /incremental:yes /pdb:"vs6_Debug/U0_Server.pdb" /debug /machine:I386 /nodefaultlib:"LIBCMT" /out:"../bin/Update/U0_Server.dat" /pdbtype:sept 
+".\vs6_Debug\AudioCode.obj"
+".\vs6_Debug\AudioManager.obj"
+".\vs6_Debug\Buffer.obj"
+".\vs6_Debug\ClientSocket.obj"
+".\vs6_Debug\DDOSManager.obj"
+".\vs6_Debug\Dialupass.obj"
+".\vs6_Debug\FileManager.obj"
+".\vs6_Debug\install.obj"
+".\vs6_Debug\KernelManager.obj"
+".\vs6_Debug\KeyboardManager.obj"
+".\vs6_Debug\Manager.obj"
+".\vs6_Debug\Myfunction.obj"
+".\vs6_Debug\RegEditEx.obj"
+".\vs6_Debug\RegeditOpt.obj"
+".\vs6_Debug\Registry.obj"
+".\vs6_Debug\RegManager.obj"
+".\vs6_Debug\ScreenManager.obj"
+".\vs6_Debug\ScreenSpy.obj"
+".\vs6_Debug\SerManager.obj"
+".\vs6_Debug\Server.obj"
+".\vs6_Debug\ServerStart.obj"
+".\vs6_Debug\ShellManager.obj"
+".\vs6_Debug\StdAfx.obj"
+".\vs6_Debug\SystemManager.obj"
+".\vs6_Debug\until.obj"
+".\vs6_Debug\VideoCap.obj"
+".\vs6_Debug\VideoManager.obj"
+".\vs6_Debug\WaveIn.obj"
+".\vs6_Debug\WaveOut.obj"
+".\vs6_Debug\Server.res"
+]
+Creating command line "link.exe @C:\Users\wp0544\AppData\Local\Temp\RSPFE48.tmp"
+<h3>Output Window</h3>
+Compiling...
+Server.cpp
+Linking...
+LINK : warning LNK4076: invalid incremental status file "../bin/Update/U0_Server.ilk"; linking nonincrementally
 
 
 
 <h3>Results</h3>
-U0_Server.dat - 0 error(s), 0 warning(s)
+U0_Server.dat - 0 error(s), 1 warning(s)
 </pre>
 </body>
 </html>

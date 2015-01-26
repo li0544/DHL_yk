@@ -95,26 +95,13 @@ protected:
 	afx_msg void OnStartNormal();
 	afx_msg void OnUpdata();
 	afx_msg void OnNoStart();
-//	afx_msg void OnADD_server();  //·þÎñÆ÷
 	afx_msg void OnAddUser();
 	afx_msg void OnAqglRz();
 	afx_msg void OnAqglYp();
 	afx_msg void OnShowmsg();
 	afx_msg void Suanxinglianjxianshi(UINT str);
-	//DOSS
 	afx_msg void OnDdos();
-	//DOSS
-//	afx_msg BOOL DeleteIcon();
-/*
-	afx_msg void OnShowMsg();
-	afx_msg void OnOpenPort();
-	afx_msg void OnProxy();
-	afx_msg void OnPortMapset();
-	afx_msg void OnPortMapping();
-	afx_msg void OnAddUser();
-	afx_msg void OnKillmbr();
-	afx_msg void OnCleanAll();
-*/
+	//afx_msg void OnPaint();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 private:

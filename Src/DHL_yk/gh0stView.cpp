@@ -109,7 +109,7 @@ BOOL CGh0stView::AddView(CRuntimeClass* pViewClass, LPCTSTR lpszTitle)
 	CWnd* pWnd;
 	TRY
 	{
-		pWnd = (CWnd*)pViewClass->CreateObject();
+		pWnd = (CListView*)pViewClass->CreateObject();
 		if (pWnd == NULL)
 		{
 			AfxThrowMemoryException();
@@ -125,13 +125,16 @@ BOOL CGh0stView::AddView(CRuntimeClass* pViewClass, LPCTSTR lpszTitle)
 		
 	DWORD dwStyle = AFX_WS_DEFAULT_VIEW;
 	dwStyle &= ~WS_BORDER;
+	//dwStyle |= WS_POPUP;
 	
 	int nTab = m_wndTabControl.GetItemCount();
 	
 	// Create with the right size (wrong position)
 	CRect rect(0,0,0,0);
-	UINT nID = AFX_IDW_PANE_FIRST + nTab;
+	UINT nID = AFX_IDW_PANE_FIRST + nTab;	//ID_LIST_PAG + 100 + nTab; 
 	if (!pWnd->Create(NULL, NULL, dwStyle, rect, &m_wndTabControl, nID, &contextT))
+	//if (!pWnd->Create(NULL, NULL, dwStyle, rect, this, nID, &contextT))
+	//if (!pWnd->Create(NULL, NULL, dwStyle, rect, &m_wndTabControl, nID))
 	{
 		TRACE0( "Warning: couldn't create client tab for view.\n" );
 		// pWnd will be cleaned up by PostNcDestroy

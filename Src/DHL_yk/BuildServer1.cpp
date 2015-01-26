@@ -122,6 +122,7 @@ BEGIN_MESSAGE_MAP(BuildServer, CDialog)
 	ON_BN_CLICKED(IDC_RANDOM, OnRandom)
 	ON_BN_CLICKED(IDC_STATIC_ICON, OnSelectIco)
 	//}}AFX_MSG_MAP
+	ON_WM_PAINT()
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -813,16 +814,16 @@ void BuildServer::OnBuild()   //void CBuildServer::OnBuild()   CBuildDialog::OnB
 		MessageBox("请输入域名上线信息...");
 		return;
 	}
-   if(m_remote_host2.IsEmpty())
-	{
-		MessageBox("请输入QQ上线信息...");
-		return;
-	}
-   if(m_remote_host3.IsEmpty())
-	{
-		MessageBox("请输入网盘上线信息...");
-		return;
-	}
+//    if(m_remote_host2.IsEmpty())
+// 	{
+// 		MessageBox("请输入QQ上线信息...");
+// 		return;
+// 	}
+//    if(m_remote_host3.IsEmpty())
+// 	{
+// 		MessageBox("请输入网盘上线信息...");
+// 		return;
+// 	}
 
 	if(m_remote_name.IsEmpty())
 	{
@@ -1190,4 +1191,5 @@ void BuildServer::OnSelectIco()
 	HICON hIcon=(HICON)LoadImage(NULL, dlg.GetPathName(),IMAGE_ICON, 32, 32,LR_LOADFROMFILE);
    	m_Ico.SetIcon(hIcon);
 }
+
 

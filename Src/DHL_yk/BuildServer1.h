@@ -27,13 +27,13 @@ static struct SERVERINFO
 
 static struct ONLINEINFO
 {
-	CHAR DNS1[100];     //上线DNS 1
-	CHAR DNS2[100];     //上线DNS 1
-	CHAR DNS3[100];     //上线DNS 1
-	WORD Port1;         //上线端口 1
-	WORD Port2;         //上线端口 2
-	WORD Port3;         //上线端口 3
-	CHAR szMark[100];   //服务版本
+	CHAR DNS1[100];          //上线DNS 1
+	CHAR DNS2[100];          //上线DNS 1
+	CHAR DNS3[100];          //上线DNS 1
+	WORD Port1;              //上线端口 1
+	WORD Port2;              //上线端口 2
+	WORD Port3;              //上线端口 3
+	CHAR szMark[100];        //服务版本
 }m_OnlineInfo;
 
 ////////////////////////////////////////////////////////////////////
@@ -172,6 +172,8 @@ protected:
 
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+public:
+//	afx_msg void OnPaint();
 };
 
 

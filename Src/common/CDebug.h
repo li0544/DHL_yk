@@ -26,11 +26,18 @@ void sendLog()
 void sendLog(int i)
 {
 	strLog.Format("%d", i);
-	sendLog(strLog);
+	sendLog();
+}
+
+void sendLog(LPCTSTR s1)
+{
+	strLog.Format("%s", s1);
+	sendLog();
 }
 
 void sendLog(LPCTSTR s1, int i)
 {
-	strLog.Format("%s%d", s1, i);
-	sendLog(strLog);
+	strLog.Format("%s", s1);
+	strLog.Format(strLog, i);
+	sendLog();
 }

