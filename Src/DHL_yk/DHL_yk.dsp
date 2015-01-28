@@ -53,7 +53,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /machine:I386
-# ADD LINK32 ../../lib/zlib.lib ../../lib/G729a.lib SHLWAPI.LIB nafxcw.lib ../../lib/UUID.LIB  ../../lib/SkinH.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/U0_2015_vs6.exe"
+# ADD LINK32 ../../lib/zlib.lib ../../lib/G729a.lib SHLWAPI.LIB nafxcw.lib ../../lib/UUID.LIB ../../lib/SkinH.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"MSVCRT.lib" /out:"../Bin/U0_2015_vs6.exe"
 # SUBTRACT LINK32 /pdb:none
 
 !ELSEIF  "$(CFG)" == "DHL_yk - Win32 Debug"
@@ -122,6 +122,10 @@ SOURCE=.\ChangeGroup.cpp
 # Begin Source File
 
 SOURCE=.\include\CpuUsage.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\DBManagerDlg.cpp
 # End Source File
 # Begin Source File
 
@@ -323,6 +327,10 @@ SOURCE=.\ChangeGroup.h
 # Begin Source File
 
 SOURCE=..\common\CPub.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DBManagerDlg.h
 # End Source File
 # Begin Source File
 

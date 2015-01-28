@@ -848,7 +848,7 @@ void CFileManager::WriteLocalRecvFile(LPBYTE lpBuffer, UINT nSize)
 	// 得到数据在文件中的偏移
 
 	LONG	dwOffsetHigh = pFileSize->dwSizeHigh;
-	LONG	dwOffsetLow = pFileSize->dwSizeLow;
+	LONG	dwOffsetLow  = pFileSize->dwSizeLow;
 
 	
 	dwBytesToWrite = nSize - 8;

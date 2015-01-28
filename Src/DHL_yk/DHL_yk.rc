@@ -138,6 +138,7 @@ BEGIN
         MENUITEM "服务管理(S)",                 IDM_SERMANAGER
         MENUITEM "注 册 表(&Z)",                IDM_REGEDIT
         MENUITEM "服 务 器(&F)",                IDM_ADD_SERVER
+        MENUITEM "数 据 库(&E)",                IDM_DATABASE
         MENUITEM SEPARATOR
         MENUITEM "消息发送(&G)",                IDM_SHOWMSG
         POPUP "远程执行(&M)"
@@ -988,6 +989,13 @@ BEGIN
                     ES_AUTOHSCROLL | ES_WANTRETURN
 END
 
+IDD_DATABASE DIALOG DISCARDABLE  0, 0, 293, 169
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "数据库管理"
+FONT 10, "System"
+BEGIN
+END
+
 
 #ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
@@ -1171,6 +1179,14 @@ BEGIN
         RIGHTMARGIN, 464
         TOPMARGIN, 7
         BOTTOMMARGIN, 299
+    END
+
+    IDD_DATABASE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 286
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
     END
 END
 #endif    // APSTUDIO_INVOKED

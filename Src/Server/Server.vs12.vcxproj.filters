@@ -102,6 +102,9 @@
     <ClCompile Include="common\WaveOut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="common\DBManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Server.rc">
@@ -215,6 +218,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="common\WaveOut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common\DBManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

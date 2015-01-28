@@ -132,17 +132,22 @@ enum
 	COMMAND_HANDSERVERICE,			// 手动
 	COMMAND_DISABLESERVERICE,		// 禁止
 
-	COMMAND_SERVERS_SETOPT,         //设置服务启动项          
-	COMMAND_SERVERS_DEL,            //删除指定服务
-	COMMAND_REGEDIT,                //注册表管理
-	COMMAND_REG_FIND,               //查询该项  
-	COMMAND_REG_DELPATH,            //删除项
-	COMMAND_REG_CREATEPATH,         //创建项
-	COMMAND_REG_DELKEY,             //删除键
-    COMMAND_REG_CREATKEY,           //创建键
+	COMMAND_SERVERS_SETOPT,         // 设置服务启动项          
+	COMMAND_SERVERS_DEL,            // 删除指定服务
+	COMMAND_REGEDIT,                // 注册表管理
+	COMMAND_REG_FIND,               // 查询该项  
+	COMMAND_REG_DELPATH,            // 删除项
+	COMMAND_REG_CREATEPATH,         // 创建项
+	COMMAND_REG_DELKEY,             // 删除键
+    COMMAND_REG_CREATKEY,           // 创建键
 
 //	COMMAND_FINDALL_PROCESS,		// 进程筛选全部
 //	COMMAND_FIND_PROCESS,			// 进程筛选
+
+	COMMAND_SQL,					// 数据库管理
+	COMMAND_SQL_CON,				// 连接到数据库
+	COMMAND_SQL_SELECT,				// 执行查询语句
+	COMMAND_SQL_EXECUTE,			// 执行非查询语句
 
 	// 服务端发出的标识
 	TOKEN_AUTH = 100,				// 要求验证
@@ -201,7 +206,9 @@ enum
     TOKEN_REG_PATH,                 // 发送注册表项名
 	TOKEN_REG_KEY,                  // 发送键名
 	TOKEN_REG_OK,                   // 执行成功
-	TOKEN_REG_NO                    // 执行失败
+	TOKEN_REG_NO,                   // 执行失败
+
+	TOKEN_DATABASE					// 打开数据库管理窗口
 };
 
 

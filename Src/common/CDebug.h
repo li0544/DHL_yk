@@ -41,3 +41,28 @@ void sendLog(LPCTSTR s1, int i)
 	strLog.Format(strLog, i);
 	sendLog();
 }
+
+BOOL DebugTrace(char * lpszFormat,...)
+{
+ static HWND hwnd = ::FindWindowA(NULL, "DbgView");
+ if(!IsWindow(hwnd))
+  hwnd = ::FindWindowA(NULL, "DbgView");
+ if(hwnd)
+ {
+  static char szMsg[512];
+  va_list argList;
+  va_start(argList, lpszFormat);
+  try
+  {
+   vsprintf(szMsg,lpszFormat, argList);
+  }
+  catch(...)
+  {
+   strcpy(szMsg ,"DebugHelper:Invalid string format!");
+  }
+  va_end(argList);
+  DWORD dwId = GetCurrentProcessId();
+  ::SendMessage(hwnd,WM_SETTEXT,dwId,(LPARAM)(LPCTSTR)szMsg);
+ }
+ return TRUE;
+}

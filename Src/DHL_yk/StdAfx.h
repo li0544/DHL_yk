@@ -4,7 +4,7 @@
 //
 
 #undef  WINVER  
-#define  WINVER  0X0500 
+#define  WINVER  0X0600 
 
 /*
 Windows 95、98 and Windows NT   4.0     WINVER=0x0400         
@@ -72,6 +72,7 @@ enum
 //	WM_FINDALL,						// 筛选全部分组
 //	WM_FIND,						// 筛选
 	WM_OPENRUSERGDIALOG,            // 打开服务器管理窗口
+	WM_OPENDATABASEDIALOG,			// 打开数据库管理窗口
 	//DOSS
 	////////////////以下是主机空闲//////////////////////////////////////
 	WM_FREE_YES,					// 无人结果
@@ -88,7 +89,8 @@ enum
 	SHELL_DLG,
 	SERMANAGER_DLG,
     REGEDIT_DLG,
-	USER_DLG
+	USER_DLG,
+	DATABASE_DLG		//数据库管理
 };
 
 typedef struct

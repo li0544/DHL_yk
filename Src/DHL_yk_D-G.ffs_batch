@@ -50,6 +50,9 @@
                 <Item>\Proj\ipch\</Item>
                 <Item>\Server\ipch\</Item>
                 <Item>*.pdb;</Item>
+                <Item>\DHL_yk\ipch\</Item>
+                <Item>\Bin\</Item>
+                <Item>*.sdf;</Item>
             </Exclude>
             <TimeSpan Type="None">0</TimeSpan>
             <SizeMin Unit="None">0</SizeMin>

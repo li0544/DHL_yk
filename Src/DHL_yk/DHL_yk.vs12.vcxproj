@@ -130,7 +130,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <OutputFile>../Bin/U0_2015_vs12d.exe</OutputFile>
       <AdditionalDependencies>../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
@@ -142,6 +142,7 @@
     <ClCompile Include="BmpToAvi.cpp" />
     <ClCompile Include="BuildServer1.cpp" />
     <ClCompile Include="ChangeGroup.cpp" />
+    <ClCompile Include="DBManagerDlg.cpp" />
     <ClCompile Include="DDOSAttackDlg.cpp" />
     <ClCompile Include="DHL_yk.cpp" />
     <ClCompile Include="Dib.cpp" />
@@ -195,13 +196,13 @@
     <ResourceCompile Include="DHL_yk.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\VC6_SDK\Include\Shlwapi.h" />
     <ClInclude Include="..\common\AudioCode.h" />
     <ClInclude Include="..\common\macros.h" />
     <ClInclude Include="AudioDlg.h" />
     <ClInclude Include="BmpToAvi.h" />
     <ClInclude Include="BuildServer1.h" />
     <ClInclude Include="ChangeGroup.h" />
+    <ClInclude Include="DBManagerDlg.h" />
     <ClInclude Include="DDOSAttackDlg.h" />
     <ClInclude Include="DHL_yk.h" />
     <ClInclude Include="Dib.h" />
@@ -217,6 +218,7 @@
     <ClInclude Include="include\Buffer.h" />
     <ClInclude Include="include\IOCPServer.h" />
     <ClInclude Include="IniFile.h" />
+    <ClInclude Include="InputDlg.h" />
     <ClInclude Include="KeyBoardDlg.h" />
     <ClInclude Include="LogView.h" />
     <ClInclude Include="MainFrm.h" />

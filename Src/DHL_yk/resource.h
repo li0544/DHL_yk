@@ -114,6 +114,7 @@
 #define IDI_BE_CAREFUL                  264
 #define IDI_SYSTRAY1                    266
 #define IDI_ICON_DDOS                   268
+#define IDD_DATABASE                    269
 #define IDR_SMALLICONS                  309
 #define IDR_LARGEICONS                  310
 #define IDB_GEAR                        312
@@ -595,6 +596,7 @@
 #define ID_m_skin_Luna                  32958
 #define ID_m_skin_Royale                32959
 #define ID_m_skin_Office2007            32960
+#define IDM_DATABASE                    32966
 #define ID_STAUTSTIP                    59394
 #define ID_STAUTSSPEED                  59395
 #define ID_STAUTSPORT                   59396
@@ -612,8 +614,8 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        269
-#define _APS_NEXT_COMMAND_VALUE         32966
+#define _APS_NEXT_RESOURCE_VALUE        270
+#define _APS_NEXT_COMMAND_VALUE         32967
 #define _APS_NEXT_CONTROL_VALUE         1131
 #define _APS_NEXT_SYMED_VALUE           101
 #endif

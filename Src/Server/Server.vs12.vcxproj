@@ -150,6 +150,7 @@
     <ClCompile Include="common\KernelManager.cpp" />
     <ClCompile Include="common\KeyboardManager.cpp" />
     <ClCompile Include="common\Manager.cpp" />
+    <ClCompile Include="common\DBManager.cpp" />
     <ClCompile Include="Myfunction.cpp" />
     <ClCompile Include="common\RegEditEx.cpp" />
     <ClCompile Include="common\RegeditOpt.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="ClientSocket.h" />
     <ClInclude Include="..\common\CursorInfo.h" />
     <ClInclude Include="common\DDOSManager.h" />
+    <ClInclude Include="common\DBManager.h" />
     <ClInclude Include="Declare.h" />
     <ClInclude Include="common\Dialupass.h" />
     <ClInclude Include="common\FileManager.h" />
